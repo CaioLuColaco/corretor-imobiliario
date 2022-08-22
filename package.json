@@ -1,0 +1,23 @@
+{
+  "name": "corretor-imobiliario",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">\r   <img src=\"https://img.shields.io/static/v1?label=Nodejs&message=3.9.5&color=7159c1&style=for-the-badge&logo=Nodejs\"/>\r </div>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaioLuColaco/corretor-imobiliario.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaioLuColaco/corretor-imobiliario/issues"
+  },
+  "homepage": "https://github.com/CaioLuColaco/corretor-imobiliario#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
