@@ -1,0 +1,23 @@
+<%- include ('./../elements/header.ejs') %>
+<body>
+    <%- include ('./../elements/navbar.ejs') %>
+    <div class="fundo-azul">
+        <img src="/assets/Rectangle 5.png" id="logo2-img" alt="" width="230" height="200" class="d-flex justify-content-center">            
+        <div class="painel-branco">
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">tipo do imóvel</button>
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">cidade</button>
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">dormitórios</button>
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">finalidade</button>
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">bairro</button>
+            <div class="d-flex">
+            <label style="margin-right: 6%; color: #9F9F9F;">Área</label>                
+            <div class="range">
+                <input type="range" min="0" max="40">
+            </div>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">valor mínimo</button>
+            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">valor máximo</button>
+            <button class="btn btn-secondary" type="button" id="btnBuscar" aria-haspopup="true" aria-expanded="false">Buscar</button>
+        </div>
+    </div>
+</body>
