@@ -1,23 +1,206 @@
 <%- include ('./../elements/header.ejs') %>
-<body>
-    <%- include ('./../elements/navbar.ejs') %>
-    <div class="fundo-azul">
-        <img src="/assets/Rectangle 5.png" id="logo2-img" alt="" width="230" height="200" class="d-flex justify-content-center">            
-        <div class="painel-branco">
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">tipo do imóvel</button>
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">cidade</button>
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">dormitórios</button>
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">finalidade</button>
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">bairro</button>
-            <div class="d-flex">
-            <label style="margin-right: 6%; color: #9F9F9F;">Área</label>                
-            <div class="range">
-                <input type="range" min="0" max="40">
+
+    <body>
+        <%- include ('./../elements/navbar.ejs') %>
+            <div class="fundo-azul text-center">
+                <div class="container-fluid center-me">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="p-5 col-md-6 bg-light rounded-3">
+                            <div class="container-fluid py-5">
+                                <div class="row d-flex justify-content-around" style="margin-top: 4%;">
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">tipo do imóvel</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">cidade</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">dormitórios</button>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-around">
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">finalidade</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <input class="form-control" type="text" placeholder="área mínima">
+                                    </div>
+                                    <div class="col-3">
+                                        <input class="form-control" type="text" placeholder="área máxima">
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-around" style="margin-bottom: 4%;">
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">valor mínimo</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">valor máximo</button>
+                                    </div>
+                                    <div class="col-3">
+                                        <button class="btn btn-secondary" type="button" id="btnBuscar" aria-haspopup="true"
+                                            aria-expanded="false">Buscar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                <!-- <div class="col-12">
+                    <div class="row"></div>
+                    <div class="row" style="margin-top: 8%; margin-bottom: -5%;">
+                        <div class="col-3"></div>
+                        <div class="col-6" id="painel-branco">
+                            <div class="row" style="margin-top: 4%;">
+                                <div class="col-3">
+                                    <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">tipo do imóvel</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">cidade</button>
+                                </div>
+                                <div class="col-3">
+                                    <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">dormitórios</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">finalidade</button>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <input class="form-control" type="text" placeholder="área mínima">
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <input class="form-control" type="text" placeholder="área máxima">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 4%;">
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">valor mínimo</button>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">valor máximo</button>
+                                </div>
+                                <div class="col-1"></div>
+                                <div class="col-3">
+                                    <button class="btn btn-secondary" type="button" id="btnBuscar" aria-haspopup="true"
+                                        aria-expanded="false">Buscar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+                <!-- <img src="/assets/banner_ihone.png" id="logo2-img" alt="" class="d-flex justify-content-center"> -->
+                <!-- <div class="painel-branco">
+                    <div class="GridPainel">
+                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">tipo do imóvel</button>
+                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">cidade</button>
+                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">dormitórios</button>
+                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">finalidade</button>
+                        <input class="form-control" type="text" placeholder="área mínima">
+                        <input class="form-control" type="text" placeholder="área máxima">
+                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">valor mínimo</button>
+                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">valor máximo</button>
+                        <button class="btn btn-secondary" type="button" id="btnBuscar" aria-haspopup="true" aria-expanded="false">Buscar</button>
+                    </div>
+                </div> -->
             </div>
+
+            <div class="album py-5">
+                <div class="container">
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-md-3">
+                            <div class="card mb-3 box-shadow">
+                                <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        Meireles
+                                    </p>
+                                    <p class="card-text">
+                                        Fortaleza
+                                    </p>
+                                    <p class="card-text">
+                                        Apartamento de 85m² Meireles - Fortaleza à venda
+                                    </p>
+                                    <p class="card-text" style="font-size: 24px;">
+                                        R$500.000
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card mb-3 box-shadow">
+                                <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        Meireles
+                                    </p>
+                                    <p class="card-text">
+                                        Fortaleza
+                                    </p>
+                                    <p class="card-text">
+                                        Apartamento de 85m² Meireles - Fortaleza à venda
+                                    </p>
+                                    <p class="card-text" style="font-size: 24px;">
+                                        R$500.000
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card mb-3 box-shadow">
+                                <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        Meireles
+                                    </p>
+                                    <p class="card-text">
+                                        Fortaleza
+                                    </p>
+                                    <p class="card-text">
+                                        Apartamento de 85m² Meireles - Fortaleza à venda
+                                    </p>
+                                    <p class="card-text" style="font-size: 24px;">
+                                        R$500.000
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">valor mínimo</button>
-            <button class="btn btn-secondary dropdown-toggle FilterButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">valor máximo</button>
-            <button class="btn btn-secondary" type="button" id="btnBuscar" aria-haspopup="true" aria-expanded="false">Buscar</button>
-        </div>
-    </div>
-</body>
+
+    </body>
