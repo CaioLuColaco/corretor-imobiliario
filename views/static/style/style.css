@@ -25,7 +25,7 @@ body {
 }
  
 .fundo-azul {
-    padding-top: 10rem;
+    padding-top: 7rem;
     padding-bottom: 3rem;
     margin-bottom: 0;
     background: #0B222E;
@@ -61,3 +61,11 @@ body {
     gap: 4rem;
     padding: 2.4rem;
 } 
+
+#btnBuscar {
+    width: 100%;
+}
+
+#btnMaisInformacoes{
+    background-color: #0B222E;
+}
