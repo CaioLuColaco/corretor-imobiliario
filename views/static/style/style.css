@@ -25,16 +25,18 @@ body {
 }
  
 .fundo-azul {
-    padding-top: 10rem;
+    padding-top: 7rem;
     padding-bottom: 3rem;
     margin-bottom: 0;
     background: #0B222E;
 }
+
 /*
 #logo2-img {
     position: relative;
     width: 100%;
 }*/
+
 
 #painel-branco {
     width: 50%;
@@ -61,3 +63,22 @@ body {
     gap: 4rem;
     padding: 2.4rem;
 } 
+
+#btnBuscar {
+    width: 100%;
+}
+
+.card:hover {
+    color: #FFF;
+    background-color: #0B222E;    
+}
+
+
+#btnMaisInformacoes{
+    background-color: #0B222E;
+}
+
+#btnMaisInformacoes:hover{
+    background-color: #FFF;
+    color: #0B222E;
+}
