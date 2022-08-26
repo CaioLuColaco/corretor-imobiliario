@@ -2,7 +2,7 @@
 
     <body>
         <%- include ('./../elements/navbar.ejs') %>
-            <div class="fundo-azul text-center">
+            <div class="fundo-azul text-center" id="inicio">
                 <div class="container-fluid center-me">
                     <div class="row">
                         <div class="col-md-3"></div>
@@ -68,6 +68,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="container-fluid py-3 pt-md-5 pb-md-4 mx-auto text-left">
                 <div class="row">
                     <div class="col-1"></div>
@@ -158,24 +159,107 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center" style="border-bottom: 2.5px solid #000;">
-                <h5 style="font-size: 40px; font-weight: 700;">Sobre Mim</h5>
-            </div>
-            <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-1 py-5 pt-md-4 pb-md-2 mx-auto">
-                    <img src="/assets/perfil_ihone.png">
+            <div class="album py-2">
+                <div class="container">
+                    <div class="row d-flex justify-content-around">
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        Meireles
+                                    </p>
+                                    <p class="card-text">
+                                        Fortaleza
+                                    </p>
+                                    <p class="card-text">
+                                        Apartamento de 85m² Meireles - Fortaleza à venda
+                                    </p>
+                                    <div class="row">
+                                        <p class="card-text" style="font-size: 24px;">
+                                            R$500.000
+                                        </p>
+                                        <button class="btn btn-secondary" type="button" id="btnMaisInformacoes"
+                                            aria-haspopup="true" aria-expanded="false">Mais Informações</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        Meireles
+                                    </p>
+                                    <p class="card-text">
+                                        Fortaleza
+                                    </p>
+                                    <p class="card-text">
+                                        Apartamento de 85m² Meireles - Fortaleza à venda
+                                    </p>
+                                    <div class="row">
+                                        <p class="card-text" style="font-size: 24px;">
+                                            R$500.000
+                                        </p>
+                                        <button class="btn btn-secondary" type="button" id="btnMaisInformacoes"
+                                            aria-haspopup="true" aria-expanded="false">Mais Informações</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-4 box-shadow">
+                                <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        Meireles
+                                    </p>
+                                    <p class="card-text">
+                                        Fortaleza
+                                    </p>
+                                    <p class="card-text">
+                                        Apartamento de 85m² Meireles - Fortaleza à venda
+                                    </p>
+                                    <div class="row">
+                                        <p class="card-text" style="font-size: 24px;">
+                                            R$500.000
+                                        </p>
+                                        <button class="btn btn-secondary" type="button" id="btnMaisInformacoes"
+                                            aria-haspopup="true" aria-expanded="false">Mais Informações</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 py-5 pt-md-5 pb-md-2 mx-auto text-left">
-                    <p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    </p>
-                </div>
             </div>
-            <div class="row py-5"></div>
+            <br>
+            <br>
+            <div class="container-fluid center-me">
+                <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center"
+                    style="border-bottom: 2.5px solid #000;">
+                    <h5 style="font-size: 40px; font-weight: 700;">Sobre Mim</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-1" id="sobre-mim"></div>
+                    <div class="col-md-1 py-5 pt-md-4 pb-md-2 mx-auto">
+                        <img src="/assets/perfil_ihone.png">
+                    </div>
+                    <div class="col-md-4 py-5 pt-md-5 pb-md-2 mx-auto text-left">
+                        <p>Sou Ihone Araújo - corretora de imóveis a mais de  20 anos em Fortaleza/Ceará.
+                            Especialista em imóveis de médio e alto padrão, oferecendo assessoria na busca, acompanhamento, análise de documentação e finalização do negócio.
+                            Para que a sua compra para morar ou investir seja realizada com agilidade e segurança.
+                            <b>Ihone Araújo</b>
+                            CRECI 3267F
+                        </p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row py-5"></div>
+            </div>
             <%- include ('./../elements/footer.ejs') %>
     </body>
