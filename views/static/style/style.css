@@ -132,11 +132,11 @@ body {
     background: #0B222E;
 }
 
-/*
+/* 
 #logo2-img {
     position: relative;
     width: 100%;
-}*/
+} */
 
 
 #painel-branco {
@@ -165,6 +165,22 @@ body {
     padding: 2.4rem;
 } 
 
+.texto-card {
+    text-decoration: none; 
+    color: #0B222E;
+}
+
+#btnMaisInformacoes
+{
+    color: #fff;
+    background-color: #0B222E;
+}
+#btnMaisInformacoes:hover
+{
+    color: #0B222E;
+    background-color: #fff;
+}
+
 #btnBuscar {
     width: 100%;
 }
@@ -172,14 +188,8 @@ body {
 .card:hover {
     color: #FFF;
     background-color: #0B222E;    
+    transform: scale(1.03);
+    transition: 0.5s all;
 }
 
 
-#btnMaisInformacoes{
-    background-color: #0B222E;
-}
-
-#btnMaisInformacoes:hover{
-    background-color: #FFF;
-    color: #0B222E;
-}
