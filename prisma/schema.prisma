@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model imoveis {
+  idimovel        Int       @id @default(autoincrement())
+  price           Decimal   @db.Decimal(12, 2)
+  title           String    @db.MediumText
+  description     String?   @db.LongText
+  district        String    @db.MediumText
+  street          String?   @db.MediumText
+  city            String    @db.MediumText
+  house_number    String?   @db.MediumText
+  area            Decimal   @db.Decimal(6, 2)
+  monthly_payment Decimal?  @db.Decimal(12, 2)
+  bedrooms        Int?
+  suites          Int?
+  bathrooms       Int?
+  garages         Int?
+  created_at      DateTime? @db.Date
+  updated_at      DateTime? @db.Date
+  photos          photos[]
+}
+
+model photos {
+  idphoto  Int     @id @default(autoincrement())
+  idimovel Int
+  codepic  Bytes?  @db.Blob
+  imoveis  imoveis @relation(fields: [idimovel], references: [idimovel], onDelete: NoAction, onUpdate: NoAction, map: "photos_ibfk_1")
+
+  @@index([idimovel], map: "idimovel")
+}
