@@ -228,7 +228,7 @@ header, .navbar {
 
 .bloco-preto{
     background-color: #0B222E;
-    border-radius: 0.3rem;
+    border-radius: 0.7rem;
     opacity: 90%;
     height: 230px;
 }
@@ -329,6 +329,8 @@ header, .navbar {
      }
   }
 
-  .modal{
-    text-align: center;
+  .anuncio-card {
+    background-color: #fff;
+    color: #0B222E;
+    border-radius: 3%;
   }
