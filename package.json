@@ -4,6 +4,7 @@
   "description": "<div align=\"center\">\r   <img src=\"https://img.shields.io/static/v1?label=Nodejs&message=3.9.5&color=7159c1&style=for-the-badge&logo=Nodejs\"/>\r </div>",
   "main": "index.js",
   "scripts": {
+    "start": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +19,12 @@
   },
   "homepage": "https://github.com/CaioLuColaco/corretor-imobiliario#readme",
   "dependencies": {
+    "@prisma/client": "^4.3.1",
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "prisma": "^4.3.1"
   }
 }
