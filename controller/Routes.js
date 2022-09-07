@@ -18,6 +18,15 @@ routes.post('/photos', PhotosController.createAll)
 routes.delete('/photos/:idphoto', PhotosController.delete)
 routes.delete('/photos', PhotosController.deleteAll)
 
+// Pages
+routes.get('/imoveis', (req, res) => res.render('./screens/imoveis'))
+routes.get('/imovel', (req, res) => res.render('./screens/imovel'))
+routes.get('/ihone', (req, res) => res.render('./screens/admin'))
+routes.get('/financas', (req, res) => res.render('./screens/financas'))
+routes.get('/home', (req, res) => res.render('./screens/home'))
+routes.get('/admin', (req, res) => res.render('./screens/login'))
+
+
 routes.use((req, res) => {
     res.status(404).json({error: "Invalid request"})
 })
