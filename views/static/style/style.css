@@ -226,11 +226,45 @@ header, .navbar {
     transition: 0.5s all;
 }
 
-.bloco-preto{
-    background-color: #0B222E;
+.bloco-branco{
+    background-color: #ffffff;
     border-radius: 0.7rem;
     opacity: 90%;
-    height: 230px;
+    height: 270px;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.whatsapp {
+    position: absolute;
+    top: 65%;
+    left: 20%;
+}
+.instagram {
+    position: absolute;
+    top: 75%;
+    left: 20%;
+}
+
+#lblDadosWPP {
+    position: absolute;
+    top: 65%;
+    left: 32%;
+}
+#lblDadosIG {
+    position: absolute;
+    top: 79%;
+    left: 32%;
+}
+.vagas-bloco{
+    position: relative;
+    top: 18px;
+    left: 60%;
+}
+.area-bloco{
+    position: relative;
+    top: -35px;
+    left: 25%;
 }
 
 .bloquinho{
@@ -269,11 +303,11 @@ header, .navbar {
     bottom: 0;
     font-size: 20px;
     line-height: 250px;
-    width: 40px;
+    width: 500px;
     color: #fff;
     transition: all 600ms ease-in-out;
     background: linear-gradient(to left, transparent 0%, black 200%);
-    opacity: 0.1;
+    opacity: 0.01;
     cursor: pointer;
     border: none;
   }
@@ -287,7 +321,7 @@ header, .navbar {
     right: 0;
     left: auto;
     text-align: right;
-    background: linear-gradient(to right, transparent 0%, black 200%);
+    background: linear-gradient(to right, transparent 50%, black 200%);
   }
   
   .gallery {
