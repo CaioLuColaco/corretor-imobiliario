@@ -19,12 +19,12 @@
 ### Features
 ---
 
--   [ ] Criar Navbar | Front
--   [ ] Criar Footer | Front
--   [ ] Criar Home | Front
--   [ ] Criar Página de Anúncios | Front
--   [ ] Criar Página de visualizar Anúncio | Front
--   [ ] Criar Página dos Financiamentos | Front
+-   [x] Criar Navbar | Front
+-   [x] Criar Footer | Front
+-   [x] Criar Home | Front
+-   [x] Criar Página de Anúncios | Front
+-   [x] Criar Página de visualizar Anúncio | Front
+-   [x] Criar Página dos Financiamentos | Front
 
 -   [ ] Ajustar Rotas | Back
 -   [X] Criar Estrutura para alimentar o Banco de dados dos imoveis| Back
