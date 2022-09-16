@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client'
+const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
@@ -35,13 +35,13 @@ module.exports = {
 
     async update(req, res) {
         try {
-            const imovelId = req.params.imovelId
-            const currentImovel = await prisma.Imoveis.findUnique({ where: { id: imovelId } })
+            const imovelId = parseInt(req.params.imovelId)
+            const currentImovel = await prisma.imoveis.findUnique({ where: { idimovel: imovelId } })
             
             const {price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages} = req.body
             const imovel = await prisma.imoveis.update({
                 where: {
-                    id: imovelId
+                    idimovel: imovelId
                 },
                 data: {
                     price: price || currentImovel.price ,
@@ -69,14 +69,16 @@ module.exports = {
 
     async delete(req, res) {
         try {
-            const imovelId = req.params.imovelId
+            const imovelId = parseInt(req.params.imovelId)
 
-            const imovel = await prisma.imovel.delete({
+            const imovel = await prisma.imoveis.delete({
                 where: {
-                    imovelId: imovelId
+                    idimovel: imovelId
                 }
             })
             
+            return res.status(200).json(imovel)
+
         } catch (error) {
             return res.status(400).json({status:400, message: error.message})
         }
@@ -85,9 +87,9 @@ module.exports = {
     async find(req, res) {
         try {
 
-            const imovelId = req.params.imovelId
+            const imovelId = parseInt(req.params.imovelId)
 
-            const imovel = await prisma.imoveis.findUnique({where: {id: imovelId}})
+            const imovel = await prisma.imoveis.findUnique({where: {idimovel: imovelId}})
             
             return res.status(200).json(imovel)
         } catch (error) {
