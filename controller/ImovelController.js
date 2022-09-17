@@ -97,7 +97,7 @@ module.exports = {
         }
     },
 
-    async findALL(req, res) {
+    async findAll(req, res) {
         try {
 
             const imoveis = await prisma.imoveis.findMany()
