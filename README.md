@@ -19,16 +19,24 @@
 ### Features
 ---
 
--   [ ] Criar Navbar | Front
--   [ ] Criar Footer | Front
--   [ ] Criar Home | Front
--   [ ] Criar Página de Anúncios | Front
--   [ ] Criar Página de visualizar Anúncio | Front
--   [ ] Criar Página dos Financiamentos | Front
--   [ ] Ajustar Rotas | Back
--   [ ] Criar Estrutura para alimentar o Banco de dados | Back
--   [ ] Criar Estrutura para excluir itens do Banco de dados | Back
--   [ ] Criar Estrutura para consumir o Banco de dados | Back
+-   [x] Criar Navbar | Front
+-   [x] Criar Footer | Front
+-   [x] Criar Home | Front
+-   [x] Criar Página de Anúncios | Front
+-   [x] Criar Página de visualizar Anúncio | Front
+-   [x] Criar Página dos Financiamentos | Front
+
+-   [x] Ajustar Rotas | Back
+-   [X] Criar Estrutura para alimentar o Banco de dados dos imoveis| Back
+-   [X] Criar Estrutura para atualizar o Banco de dados dos imoveis| Back
+-   [X] Criar Estrutura para excluir itens do Banco de dados dos imoveis | Back
+-   [X] Criar Estrutura para consumir o Banco de dados dos imoveis | Back
+-   [ ] Adicionar funcionalidade do filtro dos imoveis | Back
+
+-   [ ] Criar Estrutura para alimentar o Banco de dados das fotos | Back
+-   [x] Criar Estrutura para deletar todas as fotos de um imovel do Banco de dados | Back
+-   [x] Criar Estrutura para excluir item do Banco de dados das fotos | Back
+-   [X] Criar Estrutura para consumir o Banco de dados das fotos | Back
 
 
 ### 🛠 Tecnologias

@@ -2,13 +2,15 @@ const express = require('express')
 const app = express()
 
 const {serverConfig} = require('./config/settings')
-const { routerHome } = require('./controller/routes/home')
+
+const routes = require('./controller/Routes')
 
 app.set('view engine', 'ejs');
 app.use(express.static('views/static'));
+app.use(express.json())
 
-app.use('/', routerHome)
+app.use(routes)
 
 app.listen(serverConfig.port, () => {
-    console.log("SERVER IS RUNNING!")
+    console.log(`SERVER IS RUNNING ON PORT: ${serverConfig.port}!`)
 })
