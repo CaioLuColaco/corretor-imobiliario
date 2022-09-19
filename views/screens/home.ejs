@@ -2,7 +2,7 @@
 
     <body>
         <%- include ('./../elements/navbar.ejs') %>
-            <div class="fundo-azul img-fluid" id="inicio">  
+            <div class="fundo-azul img-fluid" id="inicio"> 
                 <div class="container-fluid center-me">
                     <div class="row">
                         <div class="col-md-3"></div>
@@ -71,13 +71,13 @@
                 </div>
             </div>
             <div class="container-fluid center-me">
-            <div class="container-fluid py-3 pt-md-5 pb-md-4 mx-auto text-left">
+            <div class="container-fluid py-3 pt-md-5 pb-md-4 mx-auto">
                 <div class="row d-flex justify-content-between">
                     <div class="col-1"></div>
-                    <div class="col-md-2 py-3" style="margin-left: -5.5%;">
-                        <nobr><label style="font-size:35px; font-weight:600;">Imóveis mais populares</label></nobr>
+                    <div class="col-md-4 py-3" style="margin-left: -5.5%;">
+                        <label id="lblMaisInfo" style="font-size:35px; font-weight:600;">Imóveis mais populares</label>
                     </div>
-                    <div class="col-md-7"></div>
+                    <div class="col-md-5"></div>
                     <div class="col-md-1 py-4 d-flex align-items-center" style="margin-right: -6%;">
                         <a href="/imoveis" target="_blank">
                         <button class="btn btn-secondary" type="button" id="btnVejaMais" aria-haspopup="true"
@@ -87,7 +87,29 @@
                     <div class="col-1"></div>
                 </div>
             </div>
-            <div class="album py-2">
+            <div class="container lista-de-cards">
+                    <a class="texto-card" href="/imovel" target="_blank">
+                        <div class="card mb-4 box-shadow">
+                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
+                                style="height: 225px; width: 100%; display:block" alt="">
+                            <div class="card-body">
+                                <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                    Meireles
+                                </p>
+                                <p class="card-text">
+                                    Fortaleza
+                                </p>
+                                <p class="card-text">
+                                    Apartamento de 85m² Meireles - Fortaleza à venda
+                                </p>
+                                <p class="card-text" style="font-size: 24px;">
+                                    R$500.000
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+            </div>
+            <!-- <div class="album py-2">
                 <div class="container">
                     <div class="row d-flex justify-content-around">
                         <div class="col-md-4">
@@ -230,7 +252,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="row py-5" id="sobre-mim"></div>
             <div class="container-fluid center-me">
                 <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center"
@@ -293,6 +315,17 @@
                         <div class="form-group">
                             <label for="NomeCompleto" style="font-size: 20px;">Sua Mensagem:</label>
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row py-1">
+                    <div class="col-lg-8"></div>
+                    <div class="col-md-2 mx-auto">
+                        <div class="form-group">
+                            <a href="/imoveis" target="_blank">
+                                <button style="width: 100px;" class="btn btn-secondary" type="button" id="btnVejaMais" aria-haspopup="true"
+                                    aria-expanded="false">Enviar</button>
+                            </a>
                         </div>
                     </div>
                 </div>
