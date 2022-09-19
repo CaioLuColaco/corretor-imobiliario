@@ -22,7 +22,7 @@ module.exports = {
         try {
             const imoveis = await prisma.imoveis.findMany()
     
-            return imoveis? res.render("./screens/home", imoveis) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/home", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
             return res.render("./screens/pageNotFind")
@@ -35,7 +35,7 @@ module.exports = {
 
             const imoveis = await prisma.imoveis.findMany()
     
-            return imoveis? res.render("./screens/admin", imoveis) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/admin", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
             return res.render("./screens/pageNotFind")
@@ -49,7 +49,7 @@ module.exports = {
 
             
     
-            return imovel? res.render("./screens/imovel", imovel) : res.render("./screens/pageNotFind")
+            return imovel? res.render("./screens/imovel", {imovel: imovel}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
             return res.render("./screens/pageNotFind")
@@ -62,7 +62,7 @@ module.exports = {
 
             const imoveis = await prisma.imoveis.findMany()
     
-            return imoveis? res.render("./screens/imoveis", imoveis) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/imoveis", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
             return res.render("./screens/pageNotFind")
