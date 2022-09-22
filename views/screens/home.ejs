@@ -14,7 +14,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="p-3 col-md-6 bg-light rounded-4">
+                        <div class="bloco-filtro p-3 col-md-6 bg-light rounded-4">
                             <div class="container-fluid py-2">
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mb-2">
@@ -88,171 +88,33 @@
                 </div>
             </div>
             <div class="container lista-de-cards">
-                    <a class="texto-card" href="/imovel" target="_blank">
+                <% for (imovel of imoveis) { %>
+                    <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
                         <div class="card mb-4 box-shadow">
                             <img src="/assets/foto_imovel.jpg" class="card-img-top"
                                 style="height: 225px; width: 100%; display:block" alt="">
                             <div class="card-body">
                                 <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                    Meireles
+                                    <%=imovel.district%>
                                 </p>
                                 <p class="card-text">
-                                    Fortaleza
+                                    <%=imovel.city%>
                                 </p>
                                 <p class="card-text">
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
+                                    <%=imovel.title%>
                                 </p>
                                 <p class="card-text" style="font-size: 24px;">
-                                    R$500.000
+                                    <% var formatter = new Intl.NumberFormat('en-US', { 
+                                         style: 'currency', 
+                                        currency: 'BRL',
+                                     }) %>
+                                    <%= formatter.format(imovel.price) %>
                                 </p>
                             </div>
                         </div>
                     </a>
+                <% } %>
             </div>
-            <!-- <div class="album py-2">
-                <div class="container">
-                    <div class="row d-flex justify-content-around">
-                        <div class="col-md-4">
-                            <a class="texto-card" href="/imovel" target="_blank">
-                                <div class="card mb-4 box-shadow">
-                                    <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                        style="height: 225px; width: 100%; display:block" alt="">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                            Meireles
-                                        </p>
-                                        <p class="card-text">
-                                            Fortaleza
-                                        </p>
-                                        <p class="card-text">
-                                            Apartamento de 85m² Meireles - Fortaleza à venda
-                                        </p>
-                                        <p class="card-text" style="font-size: 24px;">
-                                            R$500.000
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="texto-card" href="/imovel" target="_blank">
-                                <div class="card mb-4 box-shadow">
-                                    <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                        style="height: 225px; width: 100%; display:block" alt="">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                            Meireles
-                                        </p>
-                                        <p class="card-text">
-                                            Fortaleza
-                                        </p>
-                                        <p class="card-text">
-                                            Apartamento de 85m² Meireles - Fortaleza à venda
-                                        </p>
-                                        <p class="card-text" style="font-size: 24px;">
-                                            R$500.000
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="texto-card" href="/imovel" target="_blank">
-                                <div class="card mb-4 box-shadow">
-                                    <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                        style="height: 225px; width: 100%; display:block" alt="">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                            Meireles
-                                        </p>
-                                        <p class="card-text">
-                                            Fortaleza
-                                        </p>
-                                        <p class="card-text">
-                                            Apartamento de 85m² Meireles - Fortaleza à venda
-                                        </p>
-                                        <p class="card-text" style="font-size: 24px;">
-                                            R$500.000
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="album py-2">
-                <div class="container">
-                    <div class="row d-flex justify-content-around">
-                        <div class="col-md-4">
-                            <a class="texto-card" href="/imovel" target="_blank">
-                                <div class="card mb-4 box-shadow">
-                                    <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                        style="height: 225px; width: 100%; display:block" alt="">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                            Meireles
-                                        </p>
-                                        <p class="card-text">
-                                            Fortaleza
-                                        </p>
-                                        <p class="card-text">
-                                            Apartamento de 85m² Meireles - Fortaleza à venda
-                                        </p>
-                                        <p class="card-text" style="font-size: 24px;">
-                                            R$500.000
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="texto-card" href="/imovel" target="_blank">
-                                <div class="card mb-4 box-shadow">
-                                    <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                        style="height: 225px; width: 100%; display:block" alt="">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                            Meireles
-                                        </p>
-                                        <p class="card-text">
-                                            Fortaleza
-                                        </p>
-                                        <p class="card-text">
-                                            Apartamento de 85m² Meireles - Fortaleza à venda
-                                        </p>
-                                        <p class="card-text" style="font-size: 24px;">
-                                            R$500.000
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4">
-                            <a class="texto-card" href="/imovel" target="_blank">
-                                <div class="card mb-4 box-shadow">
-                                    <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                        style="height: 225px; width: 100%; display:block" alt="">
-                                    <div class="card-body">
-                                        <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                            Meireles
-                                        </p>
-                                        <p class="card-text">
-                                            Fortaleza
-                                        </p>
-                                        <p class="card-text">
-                                            Apartamento de 85m² Meireles - Fortaleza à venda
-                                        </p>
-                                        <p class="card-text" style="font-size: 24px;">
-                                            R$500.000
-                                        </p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
             <div class="row py-5" id="sobre-mim"></div>
             <div class="container-fluid center-me">
                 <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center"
@@ -323,7 +185,7 @@
                     <div class="col-md-2 mx-auto">
                         <div class="form-group">
                             <a href="/imoveis" target="_blank">
-                                <button style="width: 100px;" class="btn btn-secondary" type="button" id="btnVejaMais" aria-haspopup="true"
+                                <button style="width: 100px;" class="btn btn-secondary" type="button" id="btnEnviar" aria-haspopup="true"
                                     aria-expanded="false">Enviar</button>
                             </a>
                         </div>

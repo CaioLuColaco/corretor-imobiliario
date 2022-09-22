@@ -57,50 +57,55 @@
                             <div class="row py-2"></div>
                             <div class="row py-0">
                                 <div class="col-md-10">
-                                    <h4>Aqui segue uma descrição geral do imóvel escolhido</h4>
+                                    <h4><%=imovel.title%></h4>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>Bairro - Cidade, País</p>
+                                    <p><%=imovel.street%> - <%=imovel.district%>, <%=imovel.city%></p>
                                 </div>
                             </div>
                             <div class="row mt-3 d-flex justify-content-between">
                                 <div class="col-md-1">
                                     <img src="./assets/bed_icon.png" width="30" /><br>
-                                    <nobr><label id="lblQuartos" style="font-size: 14px;">3 quartos</label></nobr>
+                                    <nobr><label id="lblQuartos" style="font-size: 14px;"><%=imovel.bedrooms%> quartos</label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="./assets/pia.png" width="30" /><br>
-                                    <nobr><label id="lblSuites" style="font-size: 14px;">2 suites</label></nobr>
+                                    <nobr><label id="lblSuites" style="font-size: 14px;"><%=imovel.suites%> suites</label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="./assets/shower.png" width="30" /><br>
-                                    <nobr><label id="lblBanheiros" style="font-size: 14px;">3 banheiros</label></nobr>
+                                    <nobr><label id="lblBanheiros" style="font-size: 14px;"><%=imovel.bathrooms%> banheiros</label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="./assets/car_icon.png" width="30" /><br>
-                                    <nobr><label id="lblVagas" style="font-size: 14px;">2 vagas</label></nobr>
+                                    <nobr><label id="lblVagas" style="font-size: 14px;"><%=imovel.garages%> vagas</label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="./assets/area_icon.png" width="30" /><br>
-                                    <nobr><label id="lblArea" style="font-size: 14px;">95 m²</label></nobr>
+                                    <nobr><label id="lblArea" style="font-size: 14px;"><%=imovel.area%> m²</label></nobr>
                                 </div>
                                 <div class="col-md-3"></div>
                             </div>
                         </div>
                         <div class="col-md-3 bloco-branco">
                             <div class="row py-2 text-center" style="border-bottom: 0.5px solid #C4C4C4;">
-                                <nobr><label id="lblValor" style="font-size: 2.2rem; width: 100%; font-weight: 600; color: #0B222E;">R$500.000</label></nobr>     
+                                <nobr><label id="lblValor" style="font-size: 2.2rem; width: 100%; font-weight: 600; color: #0B222E;">
+                                    <% var formatter = new Intl.NumberFormat('en-US', { 
+                                    style: 'currency', 
+                                   currency: 'BRL',
+                                }) %>
+                               <%= formatter.format(imovel.price) %></label></nobr>     
                             </div>
                             <div class="row">
                                 <div>
                                     <img src="./assets/car_icon.png" class="vagas-bloco" width="33" /><br>
-                                    <nobr><label id="lblVagas" style="font-size: 14px; position: relative; top: 25px; left: 58%;">2 vagas</label></nobr>
+                                    <nobr><label id="lblVagas" style="font-size: 14px; position: relative; top: 25px; left: 58%;"><%=imovel.garages%> vagas</label></nobr>
                                 </div>
                                 <div>
                                     <img src="./assets/area_icon.png" width="30" class="area-bloco" /><br>
-                                    <nobr><label id="lblArea" style="font-size: 14px; position: relative; top: -28px; left: 24.5%;">95 m²</label></nobr>
+                                    <nobr><label id="lblArea" style="font-size: 14px; position: relative; top: -28px; left: 24.5%;"><%=imovel.area%> m²</label></nobr>
                                 </div>
                             </div>
                             <div class="row ">
@@ -149,22 +154,7 @@
                         <div class="row py-1">
                             <div class="col-md-1"></div>
                             <div class="col-md-4 d-flex justify-content-start">
-                                <p>- 23 unidades, 1 por andar com 325 m² Área Privativa
-                                    - 4 Suites + Home Theather + Estar Íntimo ou Gabinete
-                                    - Sala e Varanda com Pé Direito Duplo
-                                    - Sala para 4 Ambientes
-                                    - 5 Vagas de Garagem
-                                    - Dependência Completa de Empregada
-                                    ÁREA COMUM
-                                    - Terreno Norte / Nascente
-                                    - Piscina com Raia de 25 m
-                                    - Deck com Churrasqueira
-                                    - Espelhos d`água com cascata
-                                    - Fitness Center
-                                    - Sauna cm Relax
-                                    - Salão de Jogos
-                                    - Salão de Festas com Bar -
-
+                                <p><%=imovel.description%>
                                 </p>
                             </div>
                             <div class="col-md-7"></div>

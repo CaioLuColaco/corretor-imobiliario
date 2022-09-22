@@ -362,6 +362,10 @@ header, .navbar {
     border-radius: 3%;
   }
 
+  .anuncio-card a{
+    text-decoration: none;
+  }
+
   .lista-de-cards {
     max-width: 70rem;
     margin: 2rem auto;
