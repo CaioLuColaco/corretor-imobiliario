@@ -22,7 +22,7 @@ module.exports = {
                     bedrooms: bedrooms,
                     suites: suites,
                     bathrooms: bathrooms,
-                    garages: garages
+                    garages: garages,
                 }
             })
             
@@ -56,7 +56,7 @@ module.exports = {
                     bedrooms: bedrooms || currentImovel.bedrooms,
                     suites: suites || currentImovel.suites,
                     bathrooms: bathrooms || currentImovel.bathrooms,
-                    garages: garages || currentImovel.garages
+                    garages: garages || currentImovel.garages,
                 }
             })
 

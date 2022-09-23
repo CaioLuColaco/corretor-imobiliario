@@ -7,7 +7,7 @@ module.exports = {
     async createAll(req, res) {
         try {
 
-            const {createdPhotos} = req.body
+            const createdPhotos = req.body
 
             const photos = await prisma.photos.createMany({
                 data: createdPhotos,

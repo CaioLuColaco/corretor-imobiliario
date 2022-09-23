@@ -36,7 +36,6 @@ body {
     font-weight: 600;
     font-size: 1.4rem;
     letter-spacing: 1.3px;
-    padding-left: 10px;
     color: #555;
 }
 
@@ -49,7 +48,6 @@ body {
     font-size: 1.2rem;
     color: #666;
     padding: 10px 15px 10px 10px;
-    border: 1px solid red; 
 }
 
 .wrapper .form-field {
@@ -160,10 +158,12 @@ header, .navbar {
 
  
 .fundo-azul {
-    padding-top: 7rem;
-    padding-bottom: 3rem;
+    background-image: url('../assets/banner_ihone.png');
+    padding-top: 10rem;
+    padding-bottom: 6rem;
     margin-bottom: 0;
-    background: #0B222E;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* 
@@ -258,12 +258,13 @@ header, .navbar {
 }
 .vagas-bloco{
     position: relative;
-    top: 18px;
+    top: 23px;
     left: 60%;
 }
+
 .area-bloco{
     position: relative;
-    top: -35px;
+    top: -33px;
     left: 25%;
 }
 
@@ -303,7 +304,7 @@ header, .navbar {
     bottom: 0;
     font-size: 20px;
     line-height: 250px;
-    width: 500px;
+    width: auto;
     color: #fff;
     transition: all 600ms ease-in-out;
     background: linear-gradient(to left, transparent 0%, black 200%);
@@ -355,16 +356,52 @@ header, .navbar {
     scrollbar-width: none; /* Firefox */
   }
 
-  @media (max-width: 600px)
-  {
-    #lblDados
-     {
-      visibility: hidden;
-     }
-  }
-
   .anuncio-card {
     background-color: #fff;
     color: #0B222E;
     border-radius: 3%;
   }
+
+  .anuncio-card a{
+    text-decoration: none;
+  }
+
+  .lista-de-cards {
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr   1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  @media (max-width: 1155px) {
+    .fundo-azul{
+        background-image: url('../assets/banner_ihone (2).png');
+        padding-top: 9rem;
+        padding-bottom: 5rem;
+        background-repeat: no-repeat;
+        background-size: cover;    }
+  }
+
+
+  @media (max-width: 768px) {
+    html{
+        font-size: 87.5%;
+    }
+        .fundo-azul{
+            background: #0B222E;
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+        }
+
+        .lista-de-cards{
+            grid-template-columns: 1fr;
+        }
+
+        #lblMaisInfo{
+            text-align: center;
+        }
+    }
