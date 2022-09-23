@@ -18,44 +18,44 @@
                             <div class="container-fluid py-2">
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">tipo do imóvel</button>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Tipo do Imóvel</option>
+                                            <option value="1">Casa</option>
+                                            <option value="2">Apartamento</option>
+                                          </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">cidade</button>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Cidade</option>
+                                            <option value="1">Fortaleza</option>
+                                            <option value="2">Porto das Dunas</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">dormitórios</button>
+                                        <input class="form-control" type="text" placeholder="N° de dormitórios">
                                     </div>
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">finalidade</button>
+                                    <div class="col-md-4 mt-1">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Finalidade</option>
+                                            <option value="1">Venda</option>
+                                            <option value="2">Aluguel</option>
+                                        </select>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 mt-1">
                                         <input class="form-control" type="text" placeholder="área mínima">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 mt-1">
                                         <input class="form-control" type="text" placeholder="área máxima">
                                     </div>
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mt-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">valor mínimo</button>
+                                        <input class="form-control" type="text" placeholder="valor mínimo">
                                     </div>
                                     <div class="col-md-4 mt-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">valor máximo</button>
+                                        <input class="form-control" type="text" placeholder="valor máximo">
                                     </div>
                                     <div class="col-md-4 mt-2">
                                         <a href="/imoveis" target="_blank">
@@ -91,8 +91,7 @@
                 <% for (imovel of imoveis) { %>
                     <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
                         <div class="card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
+                            <img src="<%=imovel.photos[0].codepic%>" class="card-img-top" style="height: 225px; width: 100%; display:block" alt="">
                             <div class="card-body">
                                 <p class="card-text" style="font-size: 24px; font-weight:700;">
                                     <%=imovel.district%>
@@ -104,7 +103,7 @@
                                     <%=imovel.title%>
                                 </p>
                                 <p class="card-text" style="font-size: 24px;">
-                                    <% var formatter = new Intl.NumberFormat('en-US', { 
+                                    <% var formatter = new Intl.NumberFormat('pt-BR', { 
                                          style: 'currency', 
                                         currency: 'BRL',
                                      }) %>

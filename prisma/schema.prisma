@@ -9,6 +9,8 @@ datasource db {
 
 model imoveis {
   idimovel        Int       @id @default(autoincrement())
+  type            String    @db.MediumText
+  finality        String    @db.MediumText
   price           Decimal   @db.Decimal(12, 2)
   title           String    @db.MediumText
   description     String?   @db.LongText
@@ -30,7 +32,7 @@ model imoveis {
 model photos {
   idphoto  Int     @id @default(autoincrement())
   idimovel Int
-  codepic  Bytes?  @db.Blob
+  codepic  String  @db.MediumText
   imoveis  imoveis @relation(fields: [idimovel], references: [idimovel], onDelete: NoAction, onUpdate: NoAction, map: "photos_ibfk_1")
 
   @@index([idimovel], map: "idimovel")

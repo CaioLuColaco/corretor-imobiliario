@@ -20,7 +20,11 @@ module.exports = {
 
     async home(req, res){
         try {
-            const imoveis = await prisma.imoveis.findMany()
+            const imoveis = await prisma.imoveis.findMany({
+                include: {
+                    photos: true,
+                }
+            })
     
             return imoveis? res.render("./screens/home", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
@@ -45,8 +49,14 @@ module.exports = {
     async imovel(req, res) {
         try {
             const imovelId = parseInt(req.params.imovelId)
-            const imovel = await prisma.imoveis.findUnique({where: {idimovel: imovelId}})
-
+            const imovel = await prisma.imoveis.findUnique({
+                where: {
+                    idimovel: imovelId
+                },
+                include: {
+                    photos: true
+                }
+            })
             
     
             return imovel? res.render("./screens/imovel", {imovel: imovel}) : res.render("./screens/pageNotFind")

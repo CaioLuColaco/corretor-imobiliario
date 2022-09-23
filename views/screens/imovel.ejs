@@ -10,21 +10,9 @@
                     <button class="arrow-right control" aria-label="Next Image">▶</button>
                     <div class="gallery-wrapper">
                         <div class="gallery">
-                            <img src="assets/quarto1.jpg" alt="Beach Image" class="item current-item">
-                            <img src="assets/quarto2.jpg" alt="Animal Image" class="item current-item">
-                            <img src="assets/quarto3.jpg" alt="Street Image" class="item current-item">
-                            <img src="assets/quarto4.jpg" alt="Zoo Image" class="item current-item">
-                            <img src="assets/quarto1.jpg" alt="Model Image" class="item current-item">
-                            <img src="assets/quarto1.jpg" alt="Beach Image" class="item current-item">
-                            <img src="assets/quarto2.jpg" alt="Animal Image" class="item current-item">
-                            <img src="assets/quarto3.jpg" alt="Street Image" class="item current-item">
-                            <img src="assets/quarto4.jpg" alt="Zoo Image" class="item current-item">
-                            <img src="assets/quarto1.jpg" alt="Model Image" class="item current-item">
-                            <img src="assets/quarto1.jpg" alt="Beach Image" class="item current-item">
-                            <img src="assets/quarto2.jpg" alt="Animal Image" class="item current-item">
-                            <img src="assets/quarto3.jpg" alt="Street Image" class="item current-item">
-                            <img src="assets/quarto4.jpg" alt="Zoo Image" class="item current-item">
-                            <img src="assets/quarto1.jpg" alt="Model Image" class="item current-item">
+                            <% for (photo of imovel.photos) { %>
+                                <img src="<%=photo.codepic%>" alt="Beach Image" class="item current-item">
+                            <% } %>
                         </div>
                     </div>
                 </panel>
@@ -42,11 +30,11 @@
                             <div class="row py-1">
                                 <div
                                     class="bloquinho col-md-1 mx-2 py-2 mb-2 d-flex justify-content-center align-items-center">
-                                    <img src="./assets/fotos_icon.png" width="35" height="35" />
+                                    <img src="/assets/fotos_icon.png" width="35" height="35" />
                                 </div>
                                 <div
                                     class="bloquinho col-md-1 mx-2 py-2 mb-2 d-flex justify-content-center align-items-center">
-                                    <img src="./assets/map_icon.png" width="35" height="35" />
+                                    <img src="/assets/map_icon.png" width="35" height="35" />
                                 </div>
                                 <div class="col-md-4"></div>
                                 <div class="col-md-1">
@@ -67,23 +55,23 @@
                             </div>
                             <div class="row mt-3 d-flex justify-content-between">
                                 <div class="col-md-1">
-                                    <img src="./assets/bed_icon.png" width="30" /><br>
+                                    <img src="/assets/bed_icon.png" width="30" /><br>
                                     <nobr><label id="lblQuartos" style="font-size: 14px;"><%=imovel.bedrooms%> quartos</label></nobr>
                                 </div>
                                 <div class="col-md-1">
-                                    <img src="./assets/pia.png" width="30" /><br>
+                                    <img src="/assets/pia.png" width="30" /><br>
                                     <nobr><label id="lblSuites" style="font-size: 14px;"><%=imovel.suites%> suites</label></nobr>
                                 </div>
                                 <div class="col-md-1">
-                                    <img src="./assets/shower.png" width="30" /><br>
+                                    <img src="/assets/shower.png" width="30" /><br>
                                     <nobr><label id="lblBanheiros" style="font-size: 14px;"><%=imovel.bathrooms%> banheiros</label></nobr>
                                 </div>
                                 <div class="col-md-1">
-                                    <img src="./assets/car_icon.png" width="30" /><br>
+                                    <img src="/assets/car_icon.png" width="30" /><br>
                                     <nobr><label id="lblVagas" style="font-size: 14px;"><%=imovel.garages%> vagas</label></nobr>
                                 </div>
                                 <div class="col-md-1">
-                                    <img src="./assets/area_icon.png" width="30" /><br>
+                                    <img src="/assets/area_icon.png" width="30" /><br>
                                     <nobr><label id="lblArea" style="font-size: 14px;"><%=imovel.area%> m²</label></nobr>
                                 </div>
                                 <div class="col-md-3"></div>
@@ -100,11 +88,11 @@
                             </div>
                             <div class="row">
                                 <div>
-                                    <img src="./assets/car_icon.png" class="vagas-bloco" width="33" /><br>
+                                    <img src="/assets/car_icon.png" class="vagas-bloco" width="33" /><br>
                                     <nobr><label id="lblVagas" style="font-size: 14px; position: relative; top: 25px; left: 58%;"><%=imovel.garages%> vagas</label></nobr>
                                 </div>
                                 <div>
-                                    <img src="./assets/area_icon.png" width="30" class="area-bloco" /><br>
+                                    <img src="/assets/area_icon.png" width="30" class="area-bloco" /><br>
                                     <nobr><label id="lblArea" style="font-size: 14px; position: relative; top: -28px; left: 24.5%;"><%=imovel.area%> m²</label></nobr>
                                 </div>
                             </div>
