@@ -9,7 +9,7 @@ datasource db {
 
 model imoveis {
   idimovel        Int       @id @default(autoincrement())
-  type            String    @db.MediumText
+  imovel_type     String    @db.MediumText
   finality        String    @db.MediumText
   price           Decimal   @db.Decimal(12, 2)
   title           String    @db.MediumText

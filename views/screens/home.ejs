@@ -91,7 +91,7 @@
                 <% for (imovel of imoveis) { %>
                     <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
                         <div class="card mb-4 box-shadow">
-                            <img src="<%=imovel.photos[0].codepic%>" class="card-img-top" style="height: 225px; width: 100%; display:block" alt="">
+                            <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top" style="height: 225px; width: 100%; display:block" alt="">
                             <div class="card-body">
                                 <p class="card-text" style="font-size: 24px; font-weight:700;">
                                     <%=imovel.district%>

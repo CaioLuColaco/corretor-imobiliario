@@ -70,8 +70,12 @@ module.exports = {
     async imoveis(req, res) {
         try {
 
-            const imoveis = await prisma.imoveis.findMany()
-    
+            const imoveis = await prisma.imoveis.findMany({
+                include: {
+                    photos: true,
+                }
+            })
+
             return imoveis? res.render("./screens/imoveis", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
