@@ -6,65 +6,63 @@
                 <div class="container-fluid center-me">
                     <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="col-md-2"
-                            style="color: #FFF; font-size: 20px; font-family: 'Lucida Sans'; font-weight: 100;">Encontre
-                            seu imóvel
+                        <div class="col-md-2" style="color: #FFF; font-size: 20px; font-family: 'Lucida Sans'; font-weight: 100;">
+                            Encontre seu imóvel
                             <img src="/assets/lupa.svg" width="20" height="20">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="bloco-filtro p-3 col-md-6 bg-light rounded-4">
-                            <div class="container-fluid py-2">
+                            <form action="/imoveis" method="get" class="container-fluid py-2">
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mb-2">
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" disabled selected hidden>Tipo do Imóvel</option>
-                                            <option value="1">Casa</option>
-                                            <option value="2">Apartamento</option>
-                                        </select>
+                                        <select name="imovel_type" class="form-select" aria-label="Default select example">
+                                            <option name="imovel_type" value="" disabled selected hidden>Tipo do Imóvel</option>
+                                            <option name="imovel_type" value="Apartamento">Apartamento</option>
+                                          </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select name="city" class="form-select" aria-label="Default select example">
                                             <option value="" disabled selected hidden>Cidade</option>
-                                            <option value="1">Fortaleza</option>
-                                            <option value="2">Porto das Dunas</option>
+                                            <% for (city of cities) { %>
+                                                <option name="city" value="<%=city%>"><%=city%></option>
+                                            <% } %>
+
                                         </select>
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <select name="finality" class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Finalidade</option>
+                                            <option name="finality" value="Vender">Venda</option>
+                                            <option name="finality" value="Alugar">Aluguel</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row py-1 d-flex justify-content-around">
+                                    <div class="col-md-4 mt-1">
+                                        <input name="area_min" class="form-control" type="text" placeholder="área mínima">
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <input name="area_max" class="form-control" type="text" placeholder="área máxima">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <input class="form-control" type="text" placeholder="N° de dormitórios">
-                                    </div>
-                                </div>
-                                <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4 mt-1">
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option value="" disabled selected hidden>Finalidade</option>
-                                            <option value="1">Venda</option>
-                                            <option value="2">Aluguel</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-4 mt-1">
-                                        <input class="form-control" type="text" placeholder="área mínima">
-                                    </div>
-                                    <div class="col-md-4 mt-1">
-                                        <input class="form-control" type="text" placeholder="área máxima">
+                                        <input name="bedrooms" class="form-control" type="text" placeholder="N° de dormitórios">
                                     </div>
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mt-2">
-                                        <input class="form-control" type="text" placeholder="valor mínimo">
+                                        <input name="value_min" class="form-control" type="text" placeholder="valor mínimo">
                                     </div>
                                     <div class="col-md-4 mt-2">
-                                        <input class="form-control" type="text" placeholder="valor máximo">
+                                        <input name="value_max" class="form-control" type="text" placeholder="valor máximo">
                                     </div>
                                     <div class="col-md-4 mt-2">
-                                        <a href="/imoveis" target="_blank">
-                                            <button class="btn btn-secondary" type="button" id="btnBuscar"
-                                                aria-haspopup="true" aria-expanded="false">Buscar</button>
-                                        </a>
+                                        <button class="btn btn-secondary" id="btnBuscar" aria-haspopup="true" aria-expanded="false">Buscar</button>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="col-md-3"></div>
                     </div>

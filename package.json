@@ -2,9 +2,13 @@
   "name": "corretor-imobiliario",
   "version": "1.0.0",
   "description": "<div align=\"center\">\r   <img src=\"https://img.shields.io/static/v1?label=Nodejs&message=3.9.5&color=7159c1&style=for-the-badge&logo=Nodejs\"/>\r </div>",
+  "nodemonConfig": {
+    "ext": "ejs, js, css",
+    "delay": "3"
+  },
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,6 +30,7 @@
     "jquery": "^3.6.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.20",
     "prisma": "^4.3.1"
   }
 }

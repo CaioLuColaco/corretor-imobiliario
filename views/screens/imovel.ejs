@@ -5,19 +5,18 @@
         <div class="container-fluid center-me">
             <div class="container-fluid" id="inicio">
                 <div class="row py-4" style="padding-top: 6.5rem !important;"></div>
-                <div class="container-carousel" style="background-color: #ffffff;">
+                <div class="container-carousel" style="background-color: #fff;">
                     <panel id="pnFotos">
                         <button class="arrow-left control" aria-label="Previous image">◀</button>
                         <button class="arrow-right control" aria-label="Next Image">▶</button>
                         <div class="gallery-wrapper">
                             <div class="gallery">
                                 <% for (photo of imovel.photos) { %>
-                                    <img src="<%=photo.codepic%>" alt="" class="item current-item">
+                                    <img src="<%=photo.codepic%>" alt="Beach Image" class="item current-item">
                                     <% } %>
                             </div>
                         </div>
                     </panel>
-
                 </div>
                 <div class="container-fluid center-me">
                     <div class="row py-5">
@@ -34,7 +33,8 @@
                             <div class="row">
                                 <div class="col-md-10">
                                     <p id="rua">
-                                        <%=imovel.street%> , <%=imovel.house_number%> - <%=imovel.district%>, <%=imovel.city%>
+                                        <%=imovel.street%> , <%=imovel.house_number%> - <%=imovel.district%>,
+                                                    <%=imovel.city%>
                                     </p>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                                             <%=imovel.area%> m²
                                         </label></nobr>
                                 </div>
-                                <div class="col-md-3"></div>
+                                <div class="col-md-4"></div>
                             </div>
                         </div>
                         <div class="col-md-3 bloco-branco">
@@ -123,7 +123,7 @@
                             <div class="row">
                                 <div class="col-md-2 ml-2">
                                     <a class="instagram" href="https://www.instagram.com/ihonearaujoimoveis/">
-                                        <img src="/assets/instagram.png" width="30" style="margin-top: 0.5rem;" /><br>
+                                        <img src="./assets/instagram.png" width="30" style="margin-top: 0.5rem;" /><br>
                                     </a>
                                 </div>
                                 <div class="col-md-6 mt-2">
@@ -158,10 +158,10 @@
                                 <div class="col-md-3"></div>
                             </div>
                         </div>
-                        <div class="col-md-3 maps" id="map">                            
+                        <div class="col-md-3 maps" id="map">
                         </div>
                     </div>
-                </div>
+
                     <a href="https://api.whatsapp.com/send?phone=5585991218289&text=Texto%20aqui" target="_blank"
                         style="position:fixed;bottom:20px;right:30px;">
                         <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1"
@@ -187,7 +187,7 @@
                 zoom: 16,
             });
 
-            const geocoder=  new google.maps.Geocoder();
+            const geocoder = new google.maps.Geocoder();
             geocoder
                 .geocode({ address: $('#rua').text(), region: 'BR' })
                 .then((response) => {
