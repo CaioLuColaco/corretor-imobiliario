@@ -103,6 +103,10 @@ module.exports = {
             if(filter.finality) {
                 imoveis = imoveis.filter(imovel => imovel.finality == filter.finality)
             }
+            
+            if(filter.bedrooms) {
+                imoveis = imoveis.filter(imovel => imovel.bedrooms == filter.bedrooms)
+            }
 
             if(filter.area_min) {
                 imoveis = imoveis.filter(imovel => imovel.area >= parseFloat(filter.area_min))
