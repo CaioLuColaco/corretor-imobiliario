@@ -224,6 +224,7 @@ header, .navbar {
     background-color: #0B222E;    
     transform: scale(1.03);
     transition: 0.5s all;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25)
 }
 
 .bloco-branco{
@@ -279,7 +280,6 @@ header, .navbar {
 }
 
 .maps {
-    width: 22rem;
     height: 25rem;
     border-radius: 8px;
 }

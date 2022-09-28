@@ -18,48 +18,50 @@
                             <div class="container-fluid py-2">
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">tipo do imóvel</button>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Tipo do Imóvel</option>
+                                            <option value="1">Casa</option>
+                                            <option value="2">Apartamento</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">cidade</button>
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Cidade</option>
+                                            <option value="1">Fortaleza</option>
+                                            <option value="2">Porto das Dunas</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">dormitórios</button>
+                                        <input class="form-control" type="text" placeholder="N° de dormitórios">
                                     </div>
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">finalidade</button>
+                                    <div class="col-md-4 mt-1">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Finalidade</option>
+                                            <option value="1">Venda</option>
+                                            <option value="2">Aluguel</option>
+                                        </select>
                                     </div>
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-4 mt-1">
                                         <input class="form-control" type="text" placeholder="área mínima">
                                     </div>
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-4 mt-1">
                                         <input class="form-control" type="text" placeholder="área máxima">
                                     </div>
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">valor mínimo</button>
+                                    <div class="col-md-4 mt-2">
+                                        <input class="form-control" type="text" placeholder="valor mínimo">
                                     </div>
-                                    <div class="col-md-4">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">valor máximo</button>
+                                    <div class="col-md-4 mt-2">
+                                        <input class="form-control" type="text" placeholder="valor máximo">
                                     </div>
-                                    <div class="col-md-4">
-                                        <button class="btn btn-secondary" type="button" id="btnBuscar"
-                                            aria-haspopup="true" aria-expanded="false">Buscar</button>
+                                    <div class="col-md-4 mt-2">
+                                        <a href="/imoveis" target="_blank">
+                                            <button class="btn btn-secondary" type="button" id="btnBuscar"
+                                                aria-haspopup="true" aria-expanded="false">Buscar</button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
