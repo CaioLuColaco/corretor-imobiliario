@@ -23,6 +23,9 @@ module.exports = {
             const imoveis = await prisma.imoveis.findMany({
                 include: {
                     photos: true,
+                },
+                orderBy: {
+                    price: "asc"
                 }
             })
             
@@ -32,8 +35,18 @@ module.exports = {
                     cities.push(imovel.city)
                 }
             }
+
+            const imoveisDisplayed = []
+            if(imoveis.length > 6) {
+                for(let cont = 0; cont<3; cont ++){
+                    imoveisDisplayed.push(imoveis[cont])
+                }
+                for(let cont = imoveis.length-1; cont>=imoveis.length-3; cont--){
+                    imoveisDisplayed.push(imoveis[cont])
+                }
+            }
             
-            return imoveis? res.render("./screens/home", {imoveis: imoveis, cities: cities}) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, cities: cities}) : res.render("./screens/pageNotFind")
             
         } catch (err) {
             console.log(err)
@@ -77,14 +90,20 @@ module.exports = {
 
     async imoveis(req, res) {
         try {
+
             const filter = Object.fromEntries(
                 Object.entries(req.query).filter(([_, v]) => v != null && v !== "")
               );
+
             let imoveis = await prisma.imoveis.findMany({
                 include: {
                     photos: true,
+                },
+                orderBy: {
+                    price: "asc"
                 }
             })
+
             const cities = []
             for(imovel of imoveis) {
                 if(cities.indexOf(imovel.city) == -1) {
