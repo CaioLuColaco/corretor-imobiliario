@@ -90,7 +90,11 @@ module.exports = {
 
     async imoveis(req, res) {
         try {
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 99360abeacccc5c559c212ce0819f805e3247c5e
             const filter = Object.fromEntries(
                 Object.entries(req.query).filter(([_, v]) => v != null && v !== "")
               );
