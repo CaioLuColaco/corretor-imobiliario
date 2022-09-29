@@ -175,6 +175,10 @@ header, .navbar {
     background-size: cover;
 }
 
+.card-img-top {
+    object-fit: cover;
+}
+
 /* 
 #logo2-img {
     position: relative;
@@ -226,6 +230,10 @@ header, .navbar {
 
 #btnBuscar {
     width: 100%;
+}
+
+.card{
+    overflow: hidden;
 }
 
 .card:hover {
