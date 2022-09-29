@@ -14,55 +14,56 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3"></div>
-                        <div class="p-3 col-md-6 bg-light rounded-4">
-                            <div class="container-fluid py-2">
+                        <div class="bloco-filtro p-3 col-md-6 bg-light rounded-4">
+                            <form action="/imoveis" method="get" class="container-fluid py-2">
                                 <div class="row py-1 d-flex justify-content-around">
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">tipo do imóvel</button>
+                                        <select name="imovel_type" class="form-select" aria-label="Default select example">
+                                            <option name="imovel_type" value="" disabled selected hidden>Tipo do Imóvel</option>
+                                            <option name="imovel_type" value="Apartamento">Apartamento</option>
+                                          </select>
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">cidade</button>
+                                        <select name="city" class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Cidade</option>
+                                            <% for (city of cities) { %>
+                                                <option name="city" value="<%=city%>"><%=city%></option>
+                                            <% } %>
+
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <select name="finality" class="form-select" aria-label="Default select example">
+                                            <option value="" disabled selected hidden>Finalidade</option>
+                                            <option name="finality" value="Vender">Venda</option>
+                                            <option name="finality" value="Alugar">Aluguel</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row py-1 d-flex justify-content-around">
+                                    <div class="col-md-4 mt-1">
+                                        <input name="area_min" class="form-control" type="text" placeholder="área mínima">
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <input name="area_max" class="form-control" type="text" placeholder="área máxima">
                                     </div>
                                     <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">dormitórios</button>
+                                        <input name="bedrooms" class="form-control" type="text" placeholder="N° de dormitórios">
                                     </div>
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4 mb-2">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">finalidade</button>
+                                    <div class="col-md-4 mt-2">
+                                        <input name="value_min" class="form-control" type="text" placeholder="valor mínimo">
                                     </div>
-                                    <div class="col-md-4 mb-2">
-                                        <input class="form-control" type="text" placeholder="área mínima">
+                                    <div class="col-md-4 mt-2">
+                                        <input name="value_max" class="form-control" type="text" placeholder="valor máximo">
                                     </div>
-                                    <div class="col-md-4 mb-2">
-                                        <input class="form-control" type="text" placeholder="área máxima">
+                                    <div class="col-md-4 mt-2">
+                                        <button class="btn btn-secondary" id="btnBuscar" aria-haspopup="true" aria-expanded="false">Buscar</button>
                                     </div>
                                 </div>
-                                <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">valor mínimo</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button class="btn btn-secondary dropdown-toggle FilterButton" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">valor máximo</button>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <button class="btn btn-secondary" type="button" id="btnBuscar"
-                                            aria-haspopup="true" aria-expanded="false">Buscar</button>
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                         <div class="col-md-3"></div>
                     </div>
@@ -81,66 +82,31 @@
                     </div>
                 </div>
                 <div class="container lista-de-cards">
-                    <a class="texto-card" href="/imovel" target="_blank">
-                        <div class="card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body">
-                                <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                    Meireles
-                                </p>
-                                <p class="card-text">
-                                    Fortaleza
-                                </p>
-                                <p class="card-text">
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <p class="card-text" style="font-size: 24px;">
-                                    R$500.000
-                                </p>
+                    <% for (imovel of imoveis) { %>
+                        <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
+                            <div class="card mb-4 box-shadow">
+                                <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top" style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        <%=imovel.district%>
+                                    </p>
+                                    <p class="card-text">
+                                        <%=imovel.city%>
+                                    </p>
+                                    <p class="card-text">
+                                        <%=imovel.title%>
+                                    </p>
+                                    <p class="card-text" style="font-size: 24px;">
+                                        <% var formatter = new Intl.NumberFormat('pt-BR', { 
+                                             style: 'currency', 
+                                            currency: 'BRL',
+                                         }) %>
+                                        <%= formatter.format(imovel.price) %>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a class="texto-card" href="/imovel" target="_blank">
-                        <div class="card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body">
-                                <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                    Meireles
-                                </p>
-                                <p class="card-text">
-                                    Fortaleza
-                                </p>
-                                <p class="card-text">
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <p class="card-text" style="font-size: 24px;">
-                                    R$500.000
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="texto-card" href="/imovel" target="_blank">
-                        <div class="card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body">
-                                <p class="card-text" style="font-size: 24px; font-weight:700;">
-                                    Meireles
-                                </p>
-                                <p class="card-text">
-                                    Fortaleza
-                                </p>
-                                <p class="card-text">
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <p class="card-text" style="font-size: 24px;">
-                                    R$500.000
-                                </p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    <% } %>
                 </div>
             </div>
             <%- include ('./../elements/footer.ejs') %>
