@@ -23,12 +23,33 @@ module.exports = {
             const imoveis = await prisma.imoveis.findMany({
                 include: {
                     photos: true,
+                },
+                orderBy: {
+                    price: "asc"
                 }
             })
-    
-            return imoveis? res.render("./screens/home", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
-        } catch (error) {
+            const cities = []
+            for(imovel of imoveis) {
+                if(cities.indexOf(imovel.city) == -1) {
+                    cities.push(imovel.city)
+                }
+            }
+
+            const imoveisDisplayed = []
+            if(imoveis.length > 6) {
+                for(let cont = 0; cont<3; cont ++){
+                    imoveisDisplayed.push(imoveis[cont])
+                }
+                for(let cont = imoveis.length-1; cont>=imoveis.length-3; cont--){
+                    imoveisDisplayed.push(imoveis[cont])
+                }
+            }
+            
+            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, cities: cities}) : res.render("./screens/pageNotFind")
+            
+        } catch (err) {
+            console.log(err)
             return res.render("./screens/pageNotFind")
         }
     },
@@ -69,16 +90,64 @@ module.exports = {
 
     async imoveis(req, res) {
         try {
+        
+            const filter = Object.fromEntries(
+                Object.entries(req.query).filter(([_, v]) => v != null && v !== "")
+              );
 
-            const imoveis = await prisma.imoveis.findMany({
+            let imoveis = await prisma.imoveis.findMany({
                 include: {
                     photos: true,
+                },
+                orderBy: {
+                    price: "asc"
                 }
             })
 
-            return imoveis? res.render("./screens/imoveis", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
+            const cities = []
+            for(imovel of imoveis) {
+                if(cities.indexOf(imovel.city) == -1) {
+                    cities.push(imovel.city)
+                }
+            }
+
+            if(filter.imovel_type) {
+                imoveis = imoveis.filter(imovel => imovel.imovel_type == filter.imovel_type)
+            }
+
+            if(filter.city) {
+                imoveis = imoveis.filter(imovel => imovel.city == filter.city)
+            }
+
+            if(filter.finality) {
+                imoveis = imoveis.filter(imovel => imovel.finality == filter.finality)
+            }
+            
+            if(filter.bedrooms) {
+                imoveis = imoveis.filter(imovel => imovel.bedrooms == filter.bedrooms)
+            }
+
+            if(filter.area_min) {
+                imoveis = imoveis.filter(imovel => imovel.area >= parseFloat(filter.area_min))
+            }
+
+            if(filter.area_max) {
+                imoveis = imoveis.filter(imovel => imovel.area <= parseFloat(filter.area_max))
+            }
+
+            if(filter.value_min) {
+                imoveis = imoveis.filter(imovel => imovel.price >= parseFloat(filter.value_min))
+            }
+
+            if(filter.value_max) {
+                imoveis = imoveis.filter(imovel => imovel.price <= parseFloat(filter.value_max))
+            }
+
+    
+            return imoveis? res.render("./screens/imoveis", {imoveis: imoveis, cities: cities}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
+            console.log(error)
             return res.render("./screens/pageNotFind")
         }
     }
