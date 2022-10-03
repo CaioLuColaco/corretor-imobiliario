@@ -16,13 +16,13 @@
                         <div class="bloco-filtro p-3 col-md-6 bg-light rounded-4">
                             <form action="/imoveis" method="get" class="container-fluid py-2">
                                 <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-4 mb-1">
                                         <select name="imovel_type" class="form-select" aria-label="Default select example">
                                             <option name="imovel_type" value="" disabled selected hidden>Tipo do Imóvel</option>
                                             <option name="imovel_type" value="Apartamento">Apartamento</option>
                                           </select>
                                     </div>
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-4 mb-1">
                                         <select name="city" class="form-select" aria-label="Default select example">
                                             <option value="" disabled selected hidden>Cidade</option>
                                             <% for (city of cities) { %>
@@ -31,7 +31,7 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-4 mt-1">
+                                    <div class="col-md-4">
                                         <select name="finality" class="form-select" aria-label="Default select example">
                                             <option value="" disabled selected hidden>Finalidade</option>
                                             <option name="finality" value="Vender">Venda</option>
@@ -41,13 +41,13 @@
                                     
                                 </div>
                                 <div class="row py-1 d-flex justify-content-around">
-                                    <div class="col-md-4 mt-1">
+                                    <div class="col-md-4 mt-2">
                                         <input name="area_min" class="form-control" type="text" placeholder="área mínima">
                                     </div>
-                                    <div class="col-md-4 mt-1">
+                                    <div class="col-md-4 mt-2">
                                         <input name="area_max" class="form-control" type="text" placeholder="área máxima">
                                     </div>
-                                    <div class="col-md-4 mb-2">
+                                    <div class="col-md-4 mt-2">
                                         <input name="bedrooms" class="form-control" type="text" placeholder="N° de dormitórios">
                                     </div>
                                 </div>
@@ -72,7 +72,7 @@
                 <div class="container-fluid py-3 pt-md-5 pb-md-4 mx-auto">
                     <div class="row d-flex justify-content-between">
                         <div class="col-1"></div>
-                        <div class="col-md-4 py-3" style="margin-left: -5.5%;">
+                        <div class="lblMaisInfo2 col-md-4 py-3" style="margin-left: -5.5%;">
                             <label id="lblMaisInfo" style="font-size:35px; font-weight:600;">Imóveis mais
                                 populares</label>
                         </div>
@@ -90,7 +90,7 @@
                     <% for (imovel of imoveis) { %>
                         <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
                             <div class="card mb-4 box-shadow">
-                                <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top"
+                                <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top1"
                                     style="height: 225px; width: 100%; display:block" alt="">
                                 <div class="card-body">
                                     <p class="card-text" style="font-size: 24px; font-weight:700;">
@@ -120,10 +120,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-1 py-5 pt-md-4 pb-md-2 mx-auto">
+                        <div class="foto-ihone col-md-1 py-5 pt-md-4 pb-md-2 mx-auto">
                             <img src="/assets/perfil_ihone.png">
                         </div>
-                        <div class="col-md-4 py-5 pt-md-5 pb-md-2 mx-auto text-left">
+                        <div class="sobre-ihone col-md-4 py-5 pt-md-5 pb-md-2 mx-auto text-left">
                             <p style="font-size: 20px;">Sou Ihone Araújo - corretora de imóveis a mais de 20 anos em
                                 Fortaleza/Ceará.
                                 Especialista em imóveis de médio e alto padrão, oferecendo assessoria na busca,
@@ -137,9 +137,8 @@
                     </div>
                     <div class="row py-5"></div>
                 </div>
-                <div class="row py-5" id="fale-comigo"></div>
                 <div class="container-fluid center-me">
-                    <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center"
+                    <!-- <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center"
                         style="border-bottom: 2.5px solid #000;">
                         <h5 style="font-size: 40px; font-weight: 700;">Fale Comigo</h5>
                     </div>
@@ -189,7 +188,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row py-5"></div>
+                    <div class="row py-5"></div> -->
+                    <div class="row py-5" id="fale-comigo"></div>
                     <div class="row py-4 bg-light">
                         <div class="row">
                             <div class="col-md-12 px-5 pt-4 mx-auto text-center">
@@ -204,20 +204,19 @@
                         <div class="row d-flex pb-5 align-items-center">
                             <div class="col-md-2"></div>
                             <div class="col-md-5 maps" id="map"></div>
+                            <div class="col-md-1"></div>
                             <div class="col-md-4">
                                 <ul class="lista-info">
                                     <li style="font-size: 1.5rem;">
                                         Edifício Talent Center - Sala 1107
                                     </li>
                                     <li style="font-size: 1.5rem;">
-                                        (85)98599121-8829
+                                        (85)99121-8829
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-md-1"></div>
                         </div>
                     </div>
-                    <div class="row py-5"></div>
                     <a href="https://api.whatsapp.com/send?phone=5585991218289&text=Texto%20aqui" target="_blank"
                         style="position:fixed;bottom:20px;right:30px;">
                         <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1"
@@ -230,7 +229,6 @@
                                 fill="#FAFAFA" />
                         </svg>
                     </a>
-                    <div class="row py-5"></div>
                 </div>
             </div>
             <%- include ('./../elements/footer.ejs') %>
