@@ -418,7 +418,7 @@ header, .navbar {
   .icones-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
   }
 
   @media (max-width: 1155px) {
