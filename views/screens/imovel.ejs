@@ -2,9 +2,10 @@
 
     <body>
         <%- include ('./../elements/navbar.ejs') %>
+        <div class="container-fluid center-me">
             <div class="container-fluid" id="inicio">
                 <div class="row py-4" style="padding-top: 6.5rem !important;"></div>
-                <div class="container-carousel" style="background-color: #ffffff;">
+                <div class="container-carousel" style="background-color: #fff;">
                     <panel id="pnFotos">
                         <button class="arrow-left control" aria-label="Previous image">◀</button>
                         <button class="arrow-right control" aria-label="Next Image">▶</button>
@@ -16,7 +17,6 @@
                             </div>
                         </div>
                     </panel>
-
                 </div>
                 <div class="container-fluid center-me">
                     <div class="row py-5">
@@ -25,19 +25,20 @@
                             <div class="row py-2"></div>
                             <div class="row py-0">
                                 <div class="col-md-10">
-                                    <h4>
+                                    <h2>
                                         <%=imovel.title%>
-                                    </h4>
+                                    </h2>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <%=imovel.street%> - <%=imovel.district%>, <%=imovel.city%>
+                                    <p id="rua">
+                                        <%=imovel.street%> , <%=imovel.house_number%> - <%=imovel.district%>,
+                                                    <%=imovel.city%>
                                     </p>
                                 </div>
                             </div>
-                            <div class="row mt-3 d-flex justify-content-between">
+                            <div class="icones-grid mt-3 mb-4">
                                 <div class="col-md-1">
                                     <img src="/assets/bed_icon.png" width="30" /><br>
                                     <nobr><label id="lblQuartos" style="font-size: 14px;">
@@ -68,7 +69,7 @@
                                             <%=imovel.area%> m²
                                         </label></nobr>
                                 </div>
-                                <div class="col-md-3"></div>
+                                <div class="col-md-4"></div>
                             </div>
                         </div>
                         <div class="col-md-3 bloco-branco">
@@ -122,7 +123,7 @@
                             <div class="row">
                                 <div class="col-md-2 ml-2">
                                     <a class="instagram" href="https://www.instagram.com/ihonearaujoimoveis/">
-                                        <img src="./assets/instagram.png" width="30" style="margin-top: 0.5rem;" /><br>
+                                        <img src="/assets/instagram.png" width="30" style="margin-top: 0.5rem;" /><br>
                                     </a>
                                 </div>
                                 <div class="col-md-6 mt-2">
@@ -157,11 +158,10 @@
                                 <div class="col-md-3"></div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div id="map" class="maps">
-                            </div>
+                        <div class="col-md-3 maps" id="map">
                         </div>
                     </div>
+
                     <a href="https://api.whatsapp.com/send?phone=5585991218289&text=Texto%20aqui" target="_blank"
                         style="position:fixed;bottom:20px;right:30px;">
                         <svg enable-background="new 0 0 512 512" width="50" height="50" version="1.1"
@@ -184,8 +184,21 @@
         function initMap() {
             map = new google.maps.Map(document.getElementById("map"), {
                 center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
+                zoom: 16,
             });
+
+            const geocoder = new google.maps.Geocoder();
+            geocoder
+                .geocode({ address: $('#rua').text(), region: 'BR' })
+                .then((response) => {
+                    const position = response.results[0].geometry.location;
+
+                    map.setCenter(position);
+                    new google.maps.Marker({
+                        map,
+                        position,
+                    });
+                })
         }
 
         window.initMap = initMap;

@@ -87,17 +87,40 @@ body {
     color: #039BE5;
 }
 
-@media(max-width: 380px) {
+@media(max-width: 450px) {
     .wrapper {
         margin: 30px 20px;
         padding: 40px 15px 15px 15px;
     }
+
+    .foto-ihone{
+        display: flex;
+        justify-content: center;
+    }
+
+    .sobre-ihone {
+        text-align: center;
+    }
+
+    .lblMaisInfo2 {
+        display: flex;
+        justify-content: center;
+        margin-left: 0px!important;
+    }
+
+    header, .navbar {
+        background-color: #f4f4f4;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        right: 0;
+        left: 0;
+        z-index: 1030;
+        position: fixed;
+    }
 }
 
 header, .navbar {
-    background-color: #fff;
+    background-color: #f4f4f4;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    position: fixed;
     right: 0;
     left: 0;
     z-index: 1030;
@@ -164,6 +187,19 @@ header, .navbar {
     margin-bottom: 0;
     background-repeat: no-repeat;
     background-size: cover;
+
+}
+.fundo-azul-2 {
+    background-color: #0B222E;
+    padding-top: 10rem;
+    padding-bottom: 6rem;
+    margin-bottom: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-img-top1 {
+    object-fit: cover;
 }
 
 /* 
@@ -219,11 +255,21 @@ header, .navbar {
     width: 100%;
 }
 
+
+.card {
+    overflow: hidden
+}
+
 .card:hover {
     color: #FFF;
     background-color: #0B222E;    
     transform: scale(1.03);
     transition: 0.5s all;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25)
+}
+
+.card-img-top {
+    object-fit: cover
 }
 
 .bloco-branco{
@@ -268,19 +314,8 @@ header, .navbar {
     left: 25%;
 }
 
-.bloquinho{
-    background-color: #0B222E;
-    opacity: 90%;
-    border-radius: 0.1rem;
-}
-
-.bloquinho:hover{
-    background-color: #676767;
-}
-
 .maps {
-    width: 22rem;
-    height: 25rem;
+    height: 22rem;
     border-radius: 8px;
 }
 
@@ -334,7 +369,7 @@ header, .navbar {
   .gallery {
     display: flex;
     flex-flow: row nowrap;
-    gap: 0.5rem;
+    gap: 0.1rem;
   }
   
   .item {
@@ -343,6 +378,7 @@ header, .navbar {
     flex-shrink: 0;
     transition: all 600ms ease-in-out;
     opacity: 0.5;
+    object-fit: cover;
   }
   
   .current-item {
@@ -384,6 +420,12 @@ header, .navbar {
     align-items: flex-start;
   }
 
+  .icones-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+
   @media (max-width: 1155px) {
     .fundo-azul{
         background-image: url('../assets/banner_ihone (2).png');
@@ -413,4 +455,8 @@ header, .navbar {
             text-align: center;
         }
 
+        
+        .icones-grid{
+            grid-template-columns: 1fr 1fr 1fr;
+        }
     }
