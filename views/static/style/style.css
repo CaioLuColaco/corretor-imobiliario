@@ -278,6 +278,12 @@ header, .navbar {
     background-color: #676767;
 }
 
+.maps {
+    width: 22rem;
+    height: 25rem;
+    border-radius: 8px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -328,6 +334,7 @@ header, .navbar {
   .gallery {
     display: flex;
     flex-flow: row nowrap;
+    gap: 0.5rem;
   }
   
   .item {
@@ -383,7 +390,8 @@ header, .navbar {
         padding-top: 9rem;
         padding-bottom: 5rem;
         background-repeat: no-repeat;
-        background-size: cover;    }
+        background-size: cover;
+        }
   }
 
 
@@ -404,4 +412,5 @@ header, .navbar {
         #lblMaisInfo{
             text-align: center;
         }
+
     }
