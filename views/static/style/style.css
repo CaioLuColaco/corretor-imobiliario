@@ -219,11 +219,19 @@ header, .navbar {
     width: 100%;
 }
 
+.card {
+    overflow: hidden
+}
+
 .card:hover {
     color: #FFF;
     background-color: #0B222E;    
     transform: scale(1.03);
     transition: 0.5s all;
+}
+
+.card-img-top {
+    object-fit: cover
 }
 
 .bloco-branco{
