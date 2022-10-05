@@ -255,8 +255,9 @@ header, .navbar {
     width: 100%;
 }
 
-.card{
-    overflow: hidden;
+
+.card {
+    overflow: hidden
 }
 
 .card:hover {
@@ -265,6 +266,10 @@ header, .navbar {
     transform: scale(1.03);
     transition: 0.5s all;
     box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25)
+}
+
+.card-img-top {
+    object-fit: cover
 }
 
 .bloco-branco{
