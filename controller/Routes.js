@@ -27,6 +27,7 @@ routes.get('/imovel/:imovelId',     Pages.imovel)
 routes.get('/ihone',                Pages.ihone)
 routes.get('/financas',             Pages.financas)
 routes.get('/home',                 Pages.home)
+routes.get('/',                 Pages.home)
 
 
 routes.use((req, res) => {
