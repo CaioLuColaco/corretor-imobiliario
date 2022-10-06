@@ -3,19 +3,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model imoveis {
   idimovel        Int       @id @default(autoincrement())
   price           Decimal   @db.Decimal(12, 2)
-  title           String    @db.MediumText
-  description     String?   @db.LongText
-  district        String    @db.MediumText
-  street          String?   @db.MediumText
-  city            String    @db.MediumText
-  house_number    String?   @db.MediumText
+  title           String    
+  description     String?   
+  district        String    
+  street          String?   
+  city            String    
+  house_number    String?   
   area            Decimal   @db.Decimal(6, 2)
   monthly_payment Decimal?  @db.Decimal(12, 2)
   bedrooms        Int?
@@ -24,15 +24,15 @@ model imoveis {
   garages         Int?
   created_at      DateTime? @default(now()) @db.Timestamp(0)
   updated_at      DateTime? @default(now()) @db.Timestamp(0)
-  finality        String    @db.MediumText
-  imovel_type     String    @db.MediumText
+  finality        String    
+  imovel_type     String    
   photos          photos[]
 }
 
 model photos {
   idphoto  Int     @id @default(autoincrement())
   idimovel Int
-  codepic  String  @db.MediumText
+  codepic  String  
   imoveis  imoveis @relation(fields: [idimovel], references: [idimovel], onDelete: NoAction, onUpdate: NoAction, map: "photos_ibfk_1")
 
   @@index([idimovel], map: "idimovel")
