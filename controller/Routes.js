@@ -27,11 +27,11 @@ routes.get('/imovel/:imovelId',     Pages.imovel)
 routes.get('/ihone',                Pages.ihone)
 routes.get('/financas',             Pages.financas)
 routes.get('/home',                 Pages.home)
-routes.get('/',                 Pages.home)
+routes.get('/',                     Pages.home)
 
 
 routes.use((req, res) => {
-    res.status(404).json({error: "Invalid request"})
+    res.status(404).get('/imovel',  Pages.pageNotFind)
 })
 
 module.exports = routes;
