@@ -11,6 +11,6 @@ app.use(express.json())
 
 app.use(routes)
 
-app.listen(serverConfig.port, () => {
-    console.log(`SERVER IS RUNNING ON PORT: ${serverConfig.port}!`)
+app.listen(process.env.PORT || 3000, function(){
+    console.log(`SERVER IS RUNNING ON PORT: ${this.address().port}!`)
 })
