@@ -69,15 +69,14 @@
                 </div>
             </div>
             <div class="container-fluid center-me">
-                <div class="container-fluid py-3 pt-md-5 pb-md-4 mx-auto">
+                <div class="container-fluid py-1 pt-md-5 mx-auto">
                     <div class="row d-flex justify-content-between">
                         <div class="col-1"></div>
                         <div class="lblMaisInfo2 col-md-4 py-3" style="margin-left: -5.5%;">
-                            <label id="lblMaisInfo" style="font-size:35px; font-weight:600;">Imóveis mais
-                                populares</label>
+                            <label id="lblMaisInfo" style="font-size:35px; font-weight:600;">Imóveis econômicos</label>
                         </div>
                         <div class="col-md-5"></div>
-                        <div class="col-md-1 py-4 d-flex align-items-center" style="margin-right: -6%;">
+                        <div class="btnVejaMaisTeste col-md-1 py-4 d-flex align-items-center" style="margin-right: -6%;">
                             <a href="/imoveis" target="_blank">
                                 <button class="btn btn-secondary" type="button" id="btnVejaMais" aria-haspopup="true"
                                     aria-expanded="false">Veja Mais</button>
@@ -87,7 +86,51 @@
                     </div>
                 </div>
                 <div class="container lista-de-cards">
-                    <% for (imovel of imoveis) { %>
+                    <% for (imovel of imoveisLow) { %>
+                        <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
+                            <div class="card mb-4 box-shadow">
+                                <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top1"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        <%=imovel.district%>
+                                    </p>
+                                    <p class="card-text">
+                                        <%=imovel.city%>
+                                    </p>
+                                    <p class="card-text">
+                                        <%=imovel.title%>
+                                    </p>
+                                    <p class="card-text" style="font-size: 24px;">
+                                        <% var formatter=new Intl.NumberFormat('pt-BR', { style: 'currency' ,
+                                            currency: 'BRL' , }) %>
+                                            <%= formatter.format(imovel.price) %>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <% } %>
+                </div>
+            </div>
+            <div class="container-fluid center-me">
+                <div class="container-fluid py-1 mx-auto">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-1"></div>
+                        <div class="lblMaisInfo2 col-md-4 py-3" style="margin-left: -5.5%;">
+                            <label id="lblMaisInfo" style="font-size:35px; font-weight:600;">Imóveis médio e alto padrão</label>
+                        </div>
+                        <div class="col-md-5"></div>
+                        <div class="btnVejaMaisTeste col-md-1 py-4 d-flex align-items-center" style="margin-right: -6%;">
+                            <a href="/imoveis" target="_blank">
+                                <button class="btn btn-secondary" type="button" id="btnVejaMais" aria-haspopup="true"
+                                    aria-expanded="false">Veja Mais</button>
+                            </a>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="container lista-de-cards">
+                    <% for (imovel of imoveisHigh) { %>
                         <a class="texto-card" href="/imovel/<%=imovel.idimovel%>" target="_blank">
                             <div class="card mb-4 box-shadow">
                                 <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top1"
@@ -138,57 +181,6 @@
                     <div class="row py-5"></div>
                 </div>
                 <div class="container-fluid center-me">
-                    <!-- <div class="col-md-8 px-5 py-5 pt-md- pb-md-2 mx-auto text-center"
-                        style="border-bottom: 2.5px solid #000;">
-                        <h5 style="font-size: 40px; font-weight: 700;">Fale Comigo</h5>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="row py-3">
-                        <div class="col-md-8 mx-auto">
-                            <div class="form-group">
-                                <label for="NomeCompleto" style="font-size: 20px;">Nome Completo:</label>
-                                <input type="text" class="form-control" id="NomeCompleto" placeholder="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-8 mx-auto">
-                            <div class="form-group">
-                                <label for="EnderecoEmail" style="font-size: 20px;">Endereço de Email:</label>
-                                <input type="email" class="form-control" id="EnderecoEmail"
-                                    placeholder="nome@exemplo.com">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-8 mx-auto">
-                            <div class="form-group">
-                                <label for="Telefone" style="font-size: 20px;">Telefone:</label>
-                                <input type="text" class="form-control" id="Telefone" placeholder="(00) 00000-0000">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-8 mx-auto">
-                            <div class="form-group">
-                                <label for="NomeCompleto" style="font-size: 20px;">Sua Mensagem:</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-1">
-                        <div class="col-lg-8"></div>
-                        <div class="col-md-2 mx-auto">
-                            <div class="form-group">
-                                <a href="/imoveis" target="_blank">
-                                    <button style="width: 100px;" class="btn btn-secondary" type="button" id="btnEnviar"
-                                        aria-haspopup="true" aria-expanded="false">Enviar</button>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row py-5"></div> -->
                     <div class="row py-5" id="fale-comigo"></div>
                     <div class="row py-4 bg-light">
                         <div class="row">
@@ -208,9 +200,9 @@
                             <div class="col-md-4">
                                 <ul class="lista-info">
                                     <li style="font-size: 1.5rem;">
-                                        Edifício Talent Center - Sala 1107
+                                        Rua João Carvalho 800 - Edifício Talent Center - Sala 1107
                                     </li>
-                                    <li style="font-size: 1.5rem;">
+                                    <li style="font-size: 1.5rem; text-decoration: none;">
                                         (85)99121-8829
                                     </li>
                                 </ul>
