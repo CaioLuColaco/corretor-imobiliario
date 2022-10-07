@@ -36,10 +36,10 @@ module.exports = {
                 }
             }
 
-            const imoveisDisplayed = []
+            const imoveisDisplayedLow = []
             if(imoveis.length > 3) {
                 for(let cont = 0; cont<3; cont ++){
-                    imoveisDisplayed.push(imoveis[cont])
+                    imoveisDisplayedLow.push(imoveis[cont])
                 }
             }
 
@@ -50,7 +50,7 @@ module.exports = {
                 }
             }
             
-            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, imoveis2: imoveisDisplayedHigh, cities: cities}) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/home", {imoveisLow: imoveisDisplayedLow, imoveisHigh: imoveisDisplayedHigh, cities: cities}) : res.render("./screens/pageNotFind")
             
         } catch (err) {
             console.log(err)
