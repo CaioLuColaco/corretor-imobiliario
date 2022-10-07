@@ -37,16 +37,20 @@ module.exports = {
             }
 
             const imoveisDisplayed = []
-            if(imoveis.length > 6) {
+            if(imoveis.length > 3) {
                 for(let cont = 0; cont<3; cont ++){
                     imoveisDisplayed.push(imoveis[cont])
                 }
+            }
+
+            const imoveisDisplayedHigh = []
+            if(imoveis.length > 3) {
                 for(let cont = imoveis.length-1; cont>=imoveis.length-3; cont--){
-                    imoveisDisplayed.push(imoveis[cont])
+                    imoveisDisplayedHigh.push(imoveis[cont])
                 }
             }
             
-            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, cities: cities}) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, imoveis2: imoveisDisplayedHigh, cities: cities}) : res.render("./screens/pageNotFind")
             
         } catch (err) {
             console.log(err)

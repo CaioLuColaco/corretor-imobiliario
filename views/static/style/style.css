@@ -93,6 +93,10 @@ body {
         padding: 40px 15px 15px 15px;
     }
 
+    .bloco-filtro{
+        width: 2rem;
+    }
+
     .foto-ihone{
         display: flex;
         justify-content: center;
@@ -115,6 +119,11 @@ body {
         left: 0;
         z-index: 1030;
         position: fixed;
+    }
+
+    .btnVejaMaisTeste{
+        display: flex;
+        justify-content: center;
     }
 }
 
