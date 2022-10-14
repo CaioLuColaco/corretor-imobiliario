@@ -31,7 +31,7 @@
 -   [X] Criar Estrutura para atualizar o Banco de dados dos imoveis| Back
 -   [X] Criar Estrutura para excluir itens do Banco de dados dos imoveis | Back
 -   [X] Criar Estrutura para consumir o Banco de dados dos imoveis | Back
--   [ ] Adicionar funcionalidade do filtro dos imoveis | Back
+-   [X] Adicionar funcionalidade do filtro dos imoveis | Back
 
 -   [ ] Criar Estrutura para alimentar o Banco de dados das fotos | Back
 -   [x] Criar Estrutura para deletar todas as fotos de um imovel do Banco de dados | Back
