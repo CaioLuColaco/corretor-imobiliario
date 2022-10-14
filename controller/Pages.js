@@ -50,7 +50,7 @@ module.exports = {
                 }
             }
             
-            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, imoveis2: imoveisDisplayedHigh, cities: cities}) : res.render("./screens/pageNotFind")
+            return imoveis? res.render("./screens/home", {imoveis: imoveisDisplayed, imoveisHigh: imoveisDisplayedHigh, cities: cities}) : res.render("./screens/pageNotFind")
             
         } catch (err) {
             console.log(err)

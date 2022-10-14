@@ -190,7 +190,7 @@ header, .navbar {
 
  
 .fundo-azul {
-    background-image: url('../assets/banner_ihone.png');
+    background-image: url('../assets/banner_ihone.svg');
     padding-top: 10rem;
     padding-bottom: 6rem;
     margin-bottom: 0;
@@ -352,9 +352,9 @@ header, .navbar {
     left: 0;
     right: auto;
     bottom: 0;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 250px;
-    width: auto;
+    width: 10rem;
     color: #fff;
     transition: all 600ms ease-in-out;
     background: linear-gradient(to left, transparent 0%, black 200%);
