@@ -42,25 +42,25 @@
                                 <div class="col-md-1">
                                     <img src="/assets/bed_icon.png" width="30" /><br>
                                     <nobr><label id="lblQuartos" style="font-size: 14px;">
-                                            <%=imovel.bedrooms%> quartos
+                                            <%=imovel.bedrooms == 1 ? imovel.bedrooms + " quarto" : imovel.bedrooms + " quartos"%>
                                         </label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="/assets/pia.png" width="30" /><br>
                                     <nobr><label id="lblSuites" style="font-size: 14px;">
-                                            <%=imovel.suites%> suites
-                                        </label></nobr>
+                                        <%=imovel.suites == 1 ? imovel.suites + " suíte" : imovel.suites + " suites"%>
+                                    </label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="/assets/shower.png" width="30" /><br>
                                     <nobr><label id="lblBanheiros" style="font-size: 14px;">
-                                            <%=imovel.bathrooms%> banheiros
+                                        <%=imovel.bathrooms == 1 ? imovel.bathrooms + " banheiro" : imovel.bathrooms + " banheiros"%>
                                         </label></nobr>
                                 </div>
                                 <div class="col-md-1">
                                     <img src="/assets/car_icon.png" width="30" /><br>
                                     <nobr><label id="lblVagas" style="font-size: 14px;">
-                                            <%=imovel.garages%> vagas
+                                        <%=imovel.garages == 1 ? imovel.garages + " vaga" : imovel.garages + " vagas"%>
                                         </label></nobr>
                                 </div>
                                 <div class="col-md-1">
@@ -81,19 +81,19 @@
                                             <%= formatter.format(imovel.price) %>
                                     </label></nobr>
                             </div>
-                            <div class="row">
-                                <div>
-                                    <img src="/assets/car_icon.png" class="vagas-bloco" width="33" /><br>
-                                    <nobr><label id="lblVagas"
-                                            style="font-size: 14px; position: relative; top: 25px; left: 58%;">
-                                            <%=imovel.garages%> vagas
-                                        </label></nobr>
+                            <div class="row py-4 d-flex justify-content-center" style="border-bottom: 0.5px solid #C4C4C4;">
+                                <div class="col-md-6 text-center">
+                                    <label id="lblVagas"
+                                            style="font-size: 1.5rem;">
+                                            Condominio:
+                                        </label>
                                 </div>
-                                <div>
-                                    <img src="/assets/area_icon.png" width="30" class="area-bloco" /><br>
-                                    <nobr><label id="lblArea"
-                                            style="font-size: 14px; position: relative; top: -28px; left: 24.5%;">
-                                            <%=imovel.area%> m²
+                                <div class="col-md-6 text-center">
+                                    <nobr><label id="lblVagas"
+                                            style="font-size: 1.5rem;">
+                                            <% var formatter=new Intl.NumberFormat('pt-BR', { style: 'currency' ,
+                                            currency: 'BRL' , }) %>
+                                            <%=imovel.monthly_payment == null ? "Não informado" : formatter.format(imovel.monthly_payment) %>
                                         </label></nobr>
                                 </div>
                             </div>
