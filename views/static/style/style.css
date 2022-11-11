@@ -249,6 +249,15 @@ header, .navbar {
     color: #0B222E;
 }
 
+.texto-card:hover{
+    text-decoration: none; 
+    color: #0B222E;
+}
+
+.icone-svg{
+    width: 25px;
+}
+
 #btnMaisInformacoes
 {
     color: #fff;
@@ -269,12 +278,13 @@ header, .navbar {
     overflow: hidden
 }
 
-.card:hover {
+.card:hover, .icone-svg:hover {
     color: #FFF;
     background-color: #0B222E;    
     transform: scale(1.03);
     transition: 0.5s all;
-    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25)
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+    fill: white;
 }
 
 .card-img-top {
@@ -416,6 +426,10 @@ header, .navbar {
 
   .anuncio-card a{
     text-decoration: none;
+  }
+
+  .fotos-admin{
+    width: 200px;
   }
 
   .lista-de-cards {

@@ -3,7 +3,7 @@
     <body>
         <div class="container-fluid center-me">
             <div class="row">
-                <div class="col-md-1 d-none d-md-block sidebar" style="background-color: #0B222E;">
+                <div class="col-md-1 bg-dark">
                     <div class="sidebar-sticky">
                         <ul class="nav flex-column text-center">
                             <div class="row py-4"></div>
@@ -23,152 +23,142 @@
                     </div>
                 </div>
                 <div class="col-md-11">
-                    <div class="row py-3">
-                        <div class="col-md-1">
-                            <label for="idImovel" style="font-size: 20px;">ID:</label>
-                            <input type="text" class="form-control" id="idImovel" readonly="true" placeholder="">
-                        </div>
-                        <div class="col-md-2">
-                            <label for="titleImovel" style="font-size: 20px;">Título imóvel:</label>
-                            <input type="text" class="form-control" id="titleImovel" placeholder="">
-                        </div>
-                        <div class="col-md-4">
-                            <label for="descriptionImovel" style="font-size: 20px;">Descrição imóvel:</label>
-                            <input type="text" class="form-control" id="descriptionImovel" placeholder="">
-                        </div>
-                        <div class="col-md-2">
-                            <label for="cityImovel" style="font-size: 20px;">Cidade:</label>
-                            <input type="text" class="form-control" id="cityImovel" placeholder="">
-                        </div>
-                        <div class="col-md-2">
-                            <label for="streetImovel" style="font-size: 20px;">Rua:</label>
-                            <input type="text" class="form-control" id="streetImovel" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row py-3">
-                        <div class="col-md-2">
-                            <label for="districtImovel" style="font-size: 20px;">Bairro:</label>
-                            <input type="text" class="form-control" id="districtImovel" placeholder="">
-                        </div>
-                        <div class="col-md-1">
-                            <label for="numImovel" style="font-size: 20px;">Número:</label>
-                            <input type="text" class="form-control" id="numImovel" placeholder="">
-                        </div>
-                        <div class="col-md-1">
-                            <label for="areaImovel" style="font-size: 20px;">Tamanho:</label>
-                            <input type="text" class="form-control" id="areaImovel" placeholder="">
-                        </div>
-                        <div class="col-md-2">
-                            <label for="priceImovel" style="font-size: 20px;">Valor:</label>
-                            <input type="text" class="form-control" id="priceImovel" placeholder="">
-                        </div>
-                        <div class="col-md-2">
-                            <label for="rentImovel" style="font-size: 20px;">Valor aluguel:</label>
-                            <input type="text" class="form-control" id="rentImovel" placeholder="opcional">
-                        </div>
-                        <div class="col-md-1">
-                            <nobr><label for="bathsImovel" style="font-size: 20px;">Banheiros:</label></nobr>
-                            <input type="text" class="form-control" id="bathsImovel" placeholder="">
-                        </div>
-                        <div class="col-md-1">
-                            <label for="RoomsImovel" style="font-size: 20px;"> Quartos:</label>
-                            <input type="text" class="form-control" id="RoomsImovel" placeholder="">
-                        </div>
-                        <div class="col-md-1">
-                            <label for="MasterImovel" style="font-size: 20px;">Suites:</label>
-                            <input type="text" class="form-control" id="MasterImovel" placeholder="">
-                        </div>
-                    </div>
-                    <div class="row py-0">
-                        <div class="col-md-1">
-                            <label for="GaragesImovel" style="font-size: 20px;">Vagas:</label>
-                            <input type="text" class="form-control" id="GaragesImovel" placeholder="">
-                        </div>                        
-                        <div class="col-md-1 mt-1 mx-4">
-                            <br>
-                            <button class="btn btn-secondary" type="button" id="btnNovo" aria-haspopup="true"
-                                style="width: 110px;" aria-expanded="false">Novo</button>
-                        </div>
-                        <div class="col-md-1 mt-1 mx-4">
-                            <br>
-                            <button class="btn btn-secondary" type="button" id="btnSalvar" aria-haspopup="true"
-                                style="width: 110px;" aria-expanded="false">Salvar</button>
-                        </div>
-                        <div class="col-md-1 mt-1 mx-3">
-                            <br>
-                            <input class="" accept="image/" type="file"></input>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row py-3" style="background-color: #0B222E;">
-                        <h2 style="color: #fff; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Imóveis
-                            Anunciados</h2>
-                    </div>
                     <div class="container lista-de-cards">
-                        <div class="anuncio-card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body" style="margin: 5%;">
-                                <p>
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <br>
-                                <a href="">
-                                    <img src="/assets/lapis_icon.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="/assets/lixo.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Editar o imóvel</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row py-1">
+                                            <div class="col-md-3">
+                                                <label for="id_imovel" style="font-size:medium; font-weight:600;">Id
+                                                    Imóvel</label>
+                                                <input name="id_imovel" class="form-control" type="text" placeholder=""
+                                                    readonly="true">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Título</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Valor</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for=""
+                                                    style="font-size:medium; font-weight:600;">Finalidade</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row py-1">
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Rua</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Bairro</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Cidade</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Número</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row py-1">
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Área</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Quartos</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Suítes</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Banheiros</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row py-1">
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Vagas</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Tipo do Imóvel</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="" style="font-size:medium; font-weight:600;">Descrição</label>
+                                                <input name="" class="form-control" type="text" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="row py-1">
+                                            <div clas="container-fluid center-me">
+                                                <div class="row mb-2">
+                                                    <div class="col-md-12">
+                                                        <label for="" style="font-size:medium; font-weight:600;">Gerenciador de fotos</label>
+                                                        <input type="file" id="input-fotos" accept="image/" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12" style="border: 1px solid #D4D4D4;">
+                                                    <div class="container lista-de-cards">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="anuncio-card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body" style="margin: 5%;">
-                                <p>
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <br>
-                                <a href="">
-                                    <img src="/assets/lapis_icon.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="/assets/lixo.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
+                        <% for (imovel of imoveis) { %>
+                            <div class="card mb-4 box-shadow">
+                                <img src="<%=imovel.photos[0]?.codepic%>" class="card-img-top"
+                                    style="height: 225px; width: 100%; display:block" alt="">
+                                <div class="card-body">
+                                    <p class="card-text" style="font-size: 24px; font-weight:700;">
+                                        <%=imovel.title%>
+                                    </p>
+                                    <p class="card-text" style="font-size: 24px;">
+                                        <% var formatter=new Intl.NumberFormat('pt-BR', { style: 'currency' ,
+                                            currency: 'BRL' , }) %>
+                                            <%= formatter.format(imovel.price) %>
+                                    </p>
+                                    <a style="text-decoration: none;" href="" data-toggle="modal"
+                                        data-target="#exampleModalLong">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icone-svg" viewBox="0 0 512 512">
+                                            <path
+                                                d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z" />
+                                        </svg>
+                                    </a>
+                                    <a style="text-decoration: none;" href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icone-svg" viewBox="0 0 448 512">
+                                            <path
+                                                d="M160 400C160 408.8 152.8 416 144 416C135.2 416 128 408.8 128 400V192C128 183.2 135.2 176 144 176C152.8 176 160 183.2 160 192V400zM240 400C240 408.8 232.8 416 224 416C215.2 416 208 408.8 208 400V192C208 183.2 215.2 176 224 176C232.8 176 240 183.2 240 192V400zM320 400C320 408.8 312.8 416 304 416C295.2 416 288 408.8 288 400V192C288 183.2 295.2 176 304 176C312.8 176 320 183.2 320 192V400zM317.5 24.94L354.2 80H424C437.3 80 448 90.75 448 104C448 117.3 437.3 128 424 128H416V432C416 476.2 380.2 512 336 512H112C67.82 512 32 476.2 32 432V128H24C10.75 128 0 117.3 0 104C0 90.75 10.75 80 24 80H93.82L130.5 24.94C140.9 9.357 158.4 0 177.1 0H270.9C289.6 0 307.1 9.358 317.5 24.94H317.5zM151.5 80H296.5L277.5 51.56C276 49.34 273.5 48 270.9 48H177.1C174.5 48 171.1 49.34 170.5 51.56L151.5 80zM80 432C80 449.7 94.33 464 112 464H336C353.7 464 368 449.7 368 432V128H80V432z" />
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="anuncio-card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body" style="margin: 5%;">
-                                <p>
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <br>
-                                <a href="">
-                                    <img src="/assets/lapis_icon.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="/assets/lixo.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="anuncio-card mb-4 box-shadow">
-                            <img src="/assets/foto_imovel.jpg" class="card-img-top"
-                                style="height: 225px; width: 100%; display:block" alt="">
-                            <div class="card-body" style="margin: 5%;">
-                                <p>
-                                    Apartamento de 85m² Meireles - Fortaleza à venda
-                                </p>
-                                <br>
-                                <a href="">
-                                    <img src="/assets/lapis_icon.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
-                                <a href="">
-                                    <img src="/assets/lixo.png" style="margin-bottom: 5%;" width="25px" alt="">
-                                </a>
-                            </div>
-                        </div>
+                            <% } %>
                     </div>
                 </div>
             </div>
