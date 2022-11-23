@@ -37,79 +37,83 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row py-1">
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="id_imovel" style="font-size:medium; font-weight:600;">Id
                                                     Imóvel</label>
-                                                <input name="id_imovel" class="form-control" type="text" placeholder=""
+                                                <input id="id_imovel" class="form-control" type="text" placeholder=""
                                                     readonly="true">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-10">
                                                 <label for="" style="font-size:medium; font-weight:600;">Título</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label for="" style="font-size:medium; font-weight:600;">Valor</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
-                                            </div>
-                                            <div class="col-md-3">
-                                                <label for=""
-                                                    style="font-size:medium; font-weight:600;">Finalidade</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtTitulo" class="form-control" type="text" placeholder="">
+                                            </div>                                            
+                                        </div>
+                                        <div class="row py-1">
+                                            <div class="col-md-12">
+                                                <label for="" style="font-size:medium; font-weight:600;">Descrição</label>
+                                                <input id="txtDescricao" class="form-control" type="text" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row py-1">
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Rua</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtRua" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Bairro</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtBairro" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Cidade</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtCidade" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Número</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtNumero" class="form-control" type="text" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row py-1">
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Área</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtArea" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Quartos</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtQuarto" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Suítes</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtSuites" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Banheiros</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtBanheiros" class="form-control" type="text" placeholder="">
                                             </div>
                                         </div>
                                         <div class="row py-1">
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Vagas</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtVagas" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Tipo do Imóvel</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                                <input id="txtTipo" class="form-control" type="text" placeholder="">
                                             </div>
-                                            <div class="col-md-6">
-                                                <label for="" style="font-size:medium; font-weight:600;">Descrição</label>
-                                                <input name="" class="form-control" type="text" placeholder="">
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Valor</label>
+                                                <input id="txtValor" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <label for="" style="font-size:medium; font-weight:600;">Finalidade</label>
+                                                <select id="txtFinalidade" class="form-select" aria-label="Default select example">
+                                                    <option id="finality" value="Vender">Venda</option>
+                                                    <option id="finality" value="Alugar">Aluguel</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <div class="row py-1">
                                             <div clas="container-fluid center-me">
-                                                <div class="row mb-2">
+                                                <div class="row py-2">
                                                     <div class="col-md-12">
                                                         <label for="" style="font-size:medium; font-weight:600;">Gerenciador de fotos</label>
                                                         <input type="file" id="input-fotos" accept="image/" />
@@ -117,14 +121,18 @@
                                                 </div>
                                                 <div class="col-md-12" style="border: 1px solid #D4D4D4;">
                                                     <div class="container lista-de-cards">
-
+                                                        <% for (photo of imovel.photos) { %>
+                                                            <div class="fotos-admin">
+                                                                <img src="<%=photo.codepic%>" alt="" class="fotos-admin">
+                                                            </div>
+                                                            <% } %>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
                                         <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
@@ -143,24 +151,29 @@
                                             currency: 'BRL' , }) %>
                                             <%= formatter.format(imovel.price) %>
                                     </p>
-                                    <a style="text-decoration: none;" href="" data-toggle="modal"
+                                    <a style="text-decoration: none;" href="#exampleModalLong/<%=imovel.idimovel%>" data-toggle="modal"
                                         data-target="#exampleModalLong">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icone-svg" viewBox="0 0 512 512">
                                             <path
                                                 d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z" />
                                         </svg>
                                     </a>
-                                    <a style="text-decoration: none;" href="">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icone-svg" viewBox="0 0 448 512">
-                                            <path
-                                                d="M160 400C160 408.8 152.8 416 144 416C135.2 416 128 408.8 128 400V192C128 183.2 135.2 176 144 176C152.8 176 160 183.2 160 192V400zM240 400C240 408.8 232.8 416 224 416C215.2 416 208 408.8 208 400V192C208 183.2 215.2 176 224 176C232.8 176 240 183.2 240 192V400zM320 400C320 408.8 312.8 416 304 416C295.2 416 288 408.8 288 400V192C288 183.2 295.2 176 304 176C312.8 176 320 183.2 320 192V400zM317.5 24.94L354.2 80H424C437.3 80 448 90.75 448 104C448 117.3 437.3 128 424 128H416V432C416 476.2 380.2 512 336 512H112C67.82 512 32 476.2 32 432V128H24C10.75 128 0 117.3 0 104C0 90.75 10.75 80 24 80H93.82L130.5 24.94C140.9 9.357 158.4 0 177.1 0H270.9C289.6 0 307.1 9.358 317.5 24.94H317.5zM151.5 80H296.5L277.5 51.56C276 49.34 273.5 48 270.9 48H177.1C174.5 48 171.1 49.34 170.5 51.56L151.5 80zM80 432C80 449.7 94.33 464 112 464H336C353.7 464 368 449.7 368 432V128H80V432z" />
-                                        </svg>
-                                    </a>
                                 </div>
                             </div>
-                            <% } %>
+                            <% } %>                            
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2 d-flex justify-content-end">
+                            <a style="text-decoration: none;" href="">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="width: 3rem;" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+                            </a>
+                            <span>&nbsp;</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </body>
+    <script>
+    </script>

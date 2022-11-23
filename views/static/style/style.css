@@ -429,7 +429,8 @@ header, .navbar {
   }
 
   .fotos-admin{
-    width: 200px;
+    width: 225px;
+    height: 150px;
   }
 
   .lista-de-cards {
@@ -438,7 +439,7 @@ header, .navbar {
     padding: 0 1rem;
 
     display: grid;
-    grid-template-columns: 1fr 1fr   1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
     align-items: flex-start;
   }
