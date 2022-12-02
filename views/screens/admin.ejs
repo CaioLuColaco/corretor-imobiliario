@@ -132,7 +132,7 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="imovelDelete()">Delete</button>
                                         <button type="button" class="btn btn-primary" onclick="sendUpdate()">Salvar</button>
                                     </div>
                                 </div>
@@ -216,6 +216,13 @@
                 imovel_type: $("#txtTipo").val(),
                 finality: $("#txtFinalidade").val()
             })
+            console.log(response)
+            window.location.reload(true);
+        }
+
+        async function imovelDelete(){
+            const idImovel = $("#id_imovel").val()
+            const response = await axios.delete(`/imov/${idImovel}`)
             console.log(response)
             window.location.reload(true);
         }
