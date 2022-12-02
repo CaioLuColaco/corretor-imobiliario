@@ -6,7 +6,7 @@ module.exports = {
     async create(req, res) {
         try {
 
-            const {price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages} = req.body
+            const {price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type} = req.body
 
             const imovel = await prisma.imoveis.create({
                 data: {
@@ -23,6 +23,8 @@ module.exports = {
                     suites: suites,
                     bathrooms: bathrooms,
                     garages: garages,
+                    finality: finality,
+                    imovel_type: imovel_type,
                 }
             })
             
@@ -38,7 +40,7 @@ module.exports = {
             const imovelId = parseInt(req.params.imovelId)
             const currentImovel = await prisma.imoveis.findUnique({ where: { idimovel: imovelId } })
             
-            const {price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages} = req.body
+            const {price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type} = req.body
             const imovel = await prisma.imoveis.update({
                 where: {
                     idimovel: imovelId
@@ -57,6 +59,8 @@ module.exports = {
                     suites: suites || currentImovel.suites,
                     bathrooms: bathrooms || currentImovel.bathrooms,
                     garages: garages || currentImovel.garages,
+                    finality: finality || currentImovel.finality,
+                    imovel_type: imovel_type || currentImovel.imovel_type,
                 }
             })
 
