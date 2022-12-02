@@ -31,7 +31,7 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLongTitle">Editar o imóvel</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <button id="closeButton" type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
@@ -106,8 +106,8 @@
                                             <div class="col-md-3">
                                                 <label for="" style="font-size:medium; font-weight:600;">Finalidade</label>
                                                 <select id="txtFinalidade" class="form-select" aria-label="Default select example">
-                                                    <option id="finality" value="Vender">Venda</option>
-                                                    <option id="finality" value="Alugar">Aluguel</option>
+                                                    <option id="finalityVender" value="Vender">Venda</option>
+                                                    <option id="finalityAlugar" value="Alugar">Aluguel</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -133,7 +133,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="button" class="btn btn-primary" onclick="sendUpdate()">Salvar</button>
                                     </div>
                                 </div>
                             </div>
@@ -190,5 +190,33 @@
             $("#txtVagas").val(garages)
             $("#txtTipo").val(imovel_type)
             $("#txtValor").val(price)
+            if($("#txtFinalidade").val() == "Vender"){
+                $("#finalityVender").attr("selected","selected")
+            }else{
+                $("#finalityVender").attr("selected","selected")
+            }
+        }
+
+        async function sendUpdate(){
+            const idImovel = $("#id_imovel").val()
+            const response = await axios.put(`/imov/${idImovel}`, {
+                price: parseFloat($("#txtValor").val()),
+                title: $("#txtTitulo").val(),
+                description: $("#txtDescricao").val(),
+                district: $("#txtBairro").val(),
+                street: $("#txtRua").val(),
+                city: $("#txtCidade").val(),
+                house_number: $("#txtNumero").val(),
+                area: parseFloat($("#txtArea").val()),
+                monthly_payment: parseFloat($("#txtValor").val()),
+                bedrooms: parseInt($("#txtQuarto").val()),
+                suites: parseInt($("#txtSuites").val()),
+                bathrooms: parseInt($("#txtBanheiros").val()),
+                garages: parseInt($("#txtVagas").val()),
+                imovel_type: $("#txtTipo").val(),
+                finality: $("#txtFinalidade").val()
+            })
+            console.log(response)
+            window.location.reload(true);
         }
     </script>
