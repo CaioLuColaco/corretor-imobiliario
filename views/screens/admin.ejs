@@ -164,7 +164,7 @@
                     <div class="row py-2">
                         <div class="col-md-10"></div>
                         <div class="col-md-2 d-flex justify-content-end">
-                            <a style="text-decoration: none;" href="">
+                            <a style="text-decoration: none;" href="" onclick="modalCreate()" data-toggle="modal" data-target="#exampleModalLong">
                                 <svg xmlns="http://www.w3.org/2000/svg" style="width: 3rem;" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
                             </a>
                             <span>&nbsp;</span>
@@ -175,6 +175,23 @@
         </div>
     </body>
     <script>
+        async function modalCreate() {
+            $("#id_imovel").val(-1)
+            $("#txtTitulo").val("")
+            $("#txtDescricao").val("")
+            $("#txtRua").val("")
+            $("#txtBairro").val("")
+            $("#txtCidade").val("")
+            $("#txtNumero").val("")
+            $("#txtArea").val(0)
+            $("#txtQuarto").val(0)
+            $("#txtSuites").val(0)
+            $("#txtBanheiros").val(0)
+            $("#txtVagas").val(0)
+            $("#txtTipo").val("")
+            $("#txtValor").val(0)
+        }
+
         function modalComplete(idimovel, price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type){
             $("#id_imovel").val(idimovel)
             $("#txtTitulo").val(title)
@@ -199,23 +216,44 @@
 
         async function sendUpdate(){
             const idImovel = $("#id_imovel").val()
-            const response = await axios.put(`/imov/${idImovel}`, {
-                price: parseFloat($("#txtValor").val()),
-                title: $("#txtTitulo").val(),
-                description: $("#txtDescricao").val(),
-                district: $("#txtBairro").val(),
-                street: $("#txtRua").val(),
-                city: $("#txtCidade").val(),
-                house_number: $("#txtNumero").val(),
-                area: parseFloat($("#txtArea").val()),
-                monthly_payment: parseFloat($("#txtValor").val()),
-                bedrooms: parseInt($("#txtQuarto").val()),
-                suites: parseInt($("#txtSuites").val()),
-                bathrooms: parseInt($("#txtBanheiros").val()),
-                garages: parseInt($("#txtVagas").val()),
-                imovel_type: $("#txtTipo").val(),
-                finality: $("#txtFinalidade").val()
-            })
+            let response = {}
+            if(idImovel == -1){
+                response = await axios.post(`/imov`, {
+                    price: parseFloat($("#txtValor").val()),
+                    title: $("#txtTitulo").val(),
+                    description: $("#txtDescricao").val(),
+                    district: $("#txtBairro").val(),
+                    street: $("#txtRua").val(),
+                    city: $("#txtCidade").val(),
+                    house_number: $("#txtNumero").val(),
+                    area: parseFloat($("#txtArea").val()),
+                    monthly_payment: parseFloat($("#txtValor").val()),
+                    bedrooms: parseInt($("#txtQuarto").val()),
+                    suites: parseInt($("#txtSuites").val()),
+                    bathrooms: parseInt($("#txtBanheiros").val()),
+                    garages: parseInt($("#txtVagas").val()),
+                    imovel_type: $("#txtTipo").val(),
+                    finality: $("#txtFinalidade").val()
+                })
+            }else{
+                response = await axios.put(`/imov/${idImovel}`, {
+                    price: parseFloat($("#txtValor").val()),
+                    title: $("#txtTitulo").val(),
+                    description: $("#txtDescricao").val(),
+                    district: $("#txtBairro").val(),
+                    street: $("#txtRua").val(),
+                    city: $("#txtCidade").val(),
+                    house_number: $("#txtNumero").val(),
+                    area: parseFloat($("#txtArea").val()),
+                    monthly_payment: parseFloat($("#txtValor").val()),
+                    bedrooms: parseInt($("#txtQuarto").val()),
+                    suites: parseInt($("#txtSuites").val()),
+                    bathrooms: parseInt($("#txtBanheiros").val()),
+                    garages: parseInt($("#txtVagas").val()),
+                    imovel_type: $("#txtTipo").val(),
+                    finality: $("#txtFinalidade").val()
+                })
+            }
             console.log(response)
             window.location.reload(true);
         }
