@@ -2,6 +2,15 @@ const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
+const cloudinary = require('cloudinary').v2
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME ,
+    api_key: process.env.API_KEY ,
+    api_secret: process.env.API_SECRET ,
+    secure: true
+});
+
 module.exports = {
 
     async createAll(req, res) {
@@ -14,9 +23,9 @@ module.exports = {
                 skipDuplicates: true
             })
             
-            return res.status(200).json(photos)
+            return photos
         } catch (error) {
-            return res.status(400).json({status:400, message: error.message})
+            return error
         }
     },
 
@@ -47,10 +56,10 @@ module.exports = {
                 }
             })
 
-            return res.status(200).json(photos)
+            return photos
             
         } catch (error) {
-            return res.status(400).json({status:400, message: error.message})
+            return error
         }
     },
 
@@ -61,10 +70,12 @@ module.exports = {
 
             const photos = await prisma.photos.findMany({where: {idimovel: imovelId}})
 
-            return res.status(200).json(photos)
+            // return res.status(200).json(photos)
+            return photos
             
         } catch (error) {
-            return res.status(400).json({status:400, message: error.message})
+            return error
         }
     },
+
 }

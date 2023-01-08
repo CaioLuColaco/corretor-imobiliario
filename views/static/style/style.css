@@ -87,6 +87,10 @@ body {
     color: #039BE5;
 }
 
+.bloco-filtro{
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+}
+
 @media(max-width: 450px) {
     .wrapper {
         margin: 30px 20px;
@@ -114,7 +118,7 @@ body {
 
     header, .navbar {
         background-color: #f4f4f4;
-        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
         right: 0;
         left: 0;
         z-index: 1030;
@@ -129,7 +133,7 @@ body {
 
 header, .navbar {
     background-color: #f4f4f4;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
     right: 0;
     left: 0;
     z-index: 1030;
@@ -138,12 +142,11 @@ header, .navbar {
 #nav-container {
     padding-top: 0;
     padding-bottom: 0;
-
 }
 
 #logo {
-    width: 40px;
-    margin-left: 40px;
+    width: 35px;
+    margin-left: 30px;
 }
 
 .navbar-brand {
@@ -157,26 +160,17 @@ header, .navbar {
     cursor: pointer;
 }
 #navbar-links a {
-    color: #333232;
-    font-weight: 400;
-    font-size: 19px;
+    color: #838383;
+    font-weight: 300;
+    font-size: 18px;
 }
 #navbar-links a:hover {
-    color: #0B222E;
+    color: #000;
     transition: 200ms;
-}
-#gestao-menu {
-    opacity: 0.95;
-}
-#analise-menu {
-    opacity: 0.85;
-}
-#dev-menu {
-    opacity: 0.75;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
-    padding: 1rem 1.9rem;
+    padding: 0.6rem;
 }
 
 .text-button{
@@ -346,7 +340,6 @@ header, .navbar {
 
 .container-carousel {
     position: relative;
-    padding: 15px;
     max-width: 100%;
     margin: 0 auto;
   }

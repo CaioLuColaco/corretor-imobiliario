@@ -31,7 +31,8 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLongTitle">Editar o imóvel</h5>
-                                        <button id="closeButton" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <button id="closeButton" type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
@@ -46,12 +47,14 @@
                                             <div class="col-md-10">
                                                 <label for="" style="font-size:medium; font-weight:600;">Título</label>
                                                 <input id="txtTitulo" class="form-control" type="text" placeholder="">
-                                            </div>                                            
+                                            </div>
                                         </div>
                                         <div class="row py-1">
                                             <div class="col-md-12">
-                                                <label for="" style="font-size:medium; font-weight:600;">Descrição</label>
-                                                <input id="txtDescricao" class="form-control" type="text" placeholder="">
+                                                <label for=""
+                                                    style="font-size:medium; font-weight:600;">Descrição</label>
+                                                <input id="txtDescricao" class="form-control" type="text"
+                                                    placeholder="">
                                             </div>
                                         </div>
                                         <div class="row py-1">
@@ -86,8 +89,10 @@
                                                 <input id="txtSuites" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="" style="font-size:medium; font-weight:600;">Banheiros</label>
-                                                <input id="txtBanheiros" class="form-control" type="text" placeholder="">
+                                                <label for=""
+                                                    style="font-size:medium; font-weight:600;">Banheiros</label>
+                                                <input id="txtBanheiros" class="form-control" type="text"
+                                                    placeholder="">
                                             </div>
                                         </div>
                                         <div class="row py-1">
@@ -96,7 +101,8 @@
                                                 <input id="txtVagas" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="" style="font-size:medium; font-weight:600;">Tipo do Imóvel</label>
+                                                <label for="" style="font-size:medium; font-weight:600;">Tipo do
+                                                    Imóvel</label>
                                                 <input id="txtTipo" class="form-control" type="text" placeholder="">
                                             </div>
                                             <div class="col-md-3">
@@ -104,8 +110,10 @@
                                                 <input id="txtValor" class="form-control" type="number" placeholder="">
                                             </div>
                                             <div class="col-md-3">
-                                                <label for="" style="font-size:medium; font-weight:600;">Finalidade</label>
-                                                <select id="txtFinalidade" class="form-select" aria-label="Default select example">
+                                                <label for=""
+                                                    style="font-size:medium; font-weight:600;">Finalidade</label>
+                                                <select id="txtFinalidade" class="form-select"
+                                                    aria-label="Default select example">
                                                     <option id="finalityVender" value="Vender">Venda</option>
                                                     <option id="finalityAlugar" value="Alugar">Aluguel</option>
                                                 </select>
@@ -115,25 +123,34 @@
                                             <div clas="container-fluid center-me">
                                                 <div class="row py-2">
                                                     <div class="col-md-12">
-                                                        <label for="" style="font-size:medium; font-weight:600;">Gerenciador de fotos</label>
-                                                        <input type="file" id="input-fotos" accept="image/" />
+                                                        <label for=""
+                                                            style="font-size:medium; font-weight:600;">Gerenciador de
+                                                            fotos</label>
+                                                        <input type="file" multiple id="img-input" accept="image/" />
                                                     </div>
                                                 </div>
-                                                <!-- <div class="col-md-12" style="border: 1px solid #D4D4D4;">
+                                                <div class="col-md-12" style="border: 1px solid #D4D4D4;">
                                                     <div class="container lista-de-cards">
-                                                        <#% for (photo of imovel.photos) { %>
+                                                        <!-- <#% for(imovel of imoveis) { %>
+                                                            <#% for (photo of imovel.photos) { %>
                                                             <div class="fotos-admin">
-                                                                <img src="<#%=photo.codepic%>" alt="" class="fotos-admin">
+                                                                <img src="<#%=photo.codepic%>" id="fotosimovel" alt="" class="fotos-admin">
                                                             </div>
                                                             <#% } %>
+                                                        <#% } %> -->
+                                                            <div class="fotos-admin">
+                                                                <img src="" id="fotosimovel" alt="" class="fotos-admin">
+                                                            </div>
                                                     </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="imovelDelete()">Delete</button>
-                                        <button type="button" class="btn btn-primary" onclick="sendUpdate()">Salvar</button>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal"
+                                            onclick="imovelDelete()">Delete</button>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="sendUpdate()">Salvar</button>
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +168,9 @@
                                             currency: 'BRL' , }) %>
                                             <%= formatter.format(imovel.price) %>
                                     </p>
-                                    <a style="text-decoration: none;" onclick="modalComplete(<%=imovel.idimovel%>, <%=imovel.price%>,`<%=imovel.title%>`,`<%=imovel.description%>`,`<%=imovel.district%>`,`<%=imovel.street%>`,`<%=imovel.city%>`,`<%=imovel.house_number%>`,<%=imovel.area%>,`<%=imovel.monthly_payment%>`,<%=imovel.bedrooms%>,<%=imovel.suites%>,<%=imovel.bathrooms%>,<%=imovel.garages%>,`<%=imovel.finality%>`,`<%=imovel.imovel_type%>`)" data-toggle="modal" data-target="#exampleModalLong">
+                                    <a style="text-decoration: none;"
+                                        onclick="modalComplete(<%=imovel.idimovel%>, <%=imovel.price%>,`<%=imovel.title%>`,`<%=imovel.description%>`,`<%=imovel.district%>`,`<%=imovel.street%>`,`<%=imovel.city%>`,`<%=imovel.house_number%>`,<%=imovel.area%>,`<%=imovel.monthly_payment%>`,<%=imovel.bedrooms%>,<%=imovel.suites%>,<%=imovel.bathrooms%>,<%=imovel.garages%>,`<%=imovel.finality%>`,`<%=imovel.imovel_type%>`,<%imovel.photos.codepic%>)"
+                                        data-toggle="modal" data-target="#exampleModalLong">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icone-svg" viewBox="0 0 512 512">
                                             <path
                                                 d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z" />
@@ -159,13 +178,17 @@
                                     </a>
                                 </div>
                             </div>
-                            <% } %>                            
+                            <% } %>
                     </div>
                     <div class="row py-2">
                         <div class="col-md-10"></div>
                         <div class="col-md-2 d-flex justify-content-end">
-                            <a style="text-decoration: none;" href="" onclick="modalCreate()" data-toggle="modal" data-target="#exampleModalLong">
-                                <svg xmlns="http://www.w3.org/2000/svg" style="width: 3rem;" viewBox="0 0 512 512"><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+                            <a style="text-decoration: none;" href="" onclick="modalCreate()" data-toggle="modal"
+                                data-target="#exampleModalLong">
+                                <svg xmlns="http://www.w3.org/2000/svg" style="width: 3rem;" viewBox="0 0 512 512">
+                                    <path
+                                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                                </svg>
                             </a>
                             <span>&nbsp;</span>
                         </div>
@@ -192,7 +215,7 @@
             $("#txtValor").val(0)
         }
 
-        function modalComplete(idimovel, price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type){
+        function modalComplete(idimovel, price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type, photos) {
             $("#id_imovel").val(idimovel)
             $("#txtTitulo").val(title)
             $("#txtDescricao").val(description)
@@ -207,61 +230,77 @@
             $("#txtVagas").val(garages)
             $("#txtTipo").val(imovel_type)
             $("#txtValor").val(price)
-            if($("#txtFinalidade").val() == "Vender"){
-                $("#finalityVender").attr("selected","selected")
-            }else{
-                $("#finalityVender").attr("selected","selected")
+            $("#fotosimovel").attr("src", photos.codepic)
+
+            if ($("#txtFinalidade").val() == "Vender") {
+                $("#finalityVender").attr("selected", "selected")
+            } else {
+                $("#finalityVender").attr("selected", "selected")
             }
         }
 
-        async function sendUpdate(){
+
+        let listaFotos = []
+            
+        document.getElementById("img-input").addEventListener("change", async (e) => {
+            //console.log(e.target.files[0])
+            for(let file of e.target.files)
+            {
+                // await toBase64(e.target.files[0]).then((res) => { listaFotos.push(res) })
+                listaFotos.push(file)
+            }
+        });
+
+        async function sendUpdate() {
             const idImovel = $("#id_imovel").val()
+            
+        let formdata = new FormData
+        formdata.append("price", parseFloat($("#txtValor").val())),                
+        formdata.append("title", $("#txtTitulo").val()),               
+        formdata.append("description", $("#txtDescricao").val()),               
+        formdata.append("district", $("#txtBairro").val()),               
+        formdata.append("street", $("#txtRua").val())
+        formdata.append("city", $("#txtCidade").val()),               
+        formdata.append("house_number", $("#txtNumero").val()),               
+        formdata.append("area", parseFloat($("#txtArea").val())),               
+        formdata.append("monthly_payment", parseFloat($("#txtValor").val())),               
+        formdata.append("bedrooms", parseInt($("#txtQuarto").val())),               
+        formdata.append("suites", parseInt($("#txtSuites").val())),               
+        formdata.append("bathrooms", parseInt($("#txtBanheiros").val())),               
+        formdata.append("garages", parseInt($("#txtVagas").val())),               
+        formdata.append("imovel_type", $("#txtTipo").val()),               
+        formdata.append("finality", $("#txtFinalidade").val()) 
+        for(let arquivo in listaFotos){
+            formdata.append(`foto${arquivo}`, listaFotos[arquivo], listaFotos[arquivo].name)
+        }
+        
             let response = {}
-            if(idImovel == -1){
-                response = await axios.post(`/imov`, {
-                    price: parseFloat($("#txtValor").val()),
-                    title: $("#txtTitulo").val(),
-                    description: $("#txtDescricao").val(),
-                    district: $("#txtBairro").val(),
-                    street: $("#txtRua").val(),
-                    city: $("#txtCidade").val(),
-                    house_number: $("#txtNumero").val(),
-                    area: parseFloat($("#txtArea").val()),
-                    monthly_payment: parseFloat($("#txtValor").val()),
-                    bedrooms: parseInt($("#txtQuarto").val()),
-                    suites: parseInt($("#txtSuites").val()),
-                    bathrooms: parseInt($("#txtBanheiros").val()),
-                    garages: parseInt($("#txtVagas").val()),
-                    imovel_type: $("#txtTipo").val(),
-                    finality: $("#txtFinalidade").val()
+            if (idImovel == -1) {
+                // response = await axios.post(`/imov`, formdata)             
+                response = await axios({
+                    method: "post",
+                    url: "/imov",
+                    data:formdata,
+                    headers: { "Content-Type": "multipart/form-data"},
                 })
-            }else{
-                response = await axios.put(`/imov/${idImovel}`, {
-                    price: parseFloat($("#txtValor").val()),
-                    title: $("#txtTitulo").val(),
-                    description: $("#txtDescricao").val(),
-                    district: $("#txtBairro").val(),
-                    street: $("#txtRua").val(),
-                    city: $("#txtCidade").val(),
-                    house_number: $("#txtNumero").val(),
-                    area: parseFloat($("#txtArea").val()),
-                    monthly_payment: parseFloat($("#txtValor").val()),
-                    bedrooms: parseInt($("#txtQuarto").val()),
-                    suites: parseInt($("#txtSuites").val()),
-                    bathrooms: parseInt($("#txtBanheiros").val()),
-                    garages: parseInt($("#txtVagas").val()),
-                    imovel_type: $("#txtTipo").val(),
-                    finality: $("#txtFinalidade").val()
+            } else {
+                response = await axios({
+                    method: "put",
+                    url: `/imov/${idImovel}`,
+                    data:formdata,
+                    headers: { "Content-Type": "multipart/form-data"},
                 })
             }
-            console.log(response)
+            // console.log(response)
             window.location.reload(true);
         }
 
-        async function imovelDelete(){
+        async function imovelDelete() {
             const idImovel = $("#id_imovel").val()
             const response = await axios.delete(`/imov/${idImovel}`)
             console.log(response)
             window.location.reload(true);
         }
+
+
     </script>
