@@ -80,11 +80,15 @@
                                                 <label for="" style="font-size:medium; font-weight:600;">Área</label>
                                                 <input id="txtArea" class="form-control" type="text" placeholder="">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
+                                                <label for="" style="font-size:medium; font-weight:600;">Condomínio</label>
+                                                <input id="txtCondominio" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
                                                 <label for="" style="font-size:medium; font-weight:600;">Quartos</label>
                                                 <input id="txtQuarto" class="form-control" type="text" placeholder="">
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-2">
                                                 <label for="" style="font-size:medium; font-weight:600;">Suítes</label>
                                                 <input id="txtSuites" class="form-control" type="text" placeholder="">
                                             </div>
@@ -130,17 +134,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12" style="border: 1px solid #D4D4D4;">
-                                                    <div class="container lista-de-cards">
-                                                        <!-- <#% for(imovel of imoveis) { %>
-                                                            <#% for (photo of imovel.photos) { %>
-                                                            <div class="fotos-admin">
-                                                                <img src="<#%=photo.codepic%>" id="fotosimovel" alt="" class="fotos-admin">
-                                                            </div>
-                                                            <#% } %>
-                                                        <#% } %> -->
-                                                            <div class="fotos-admin">
-                                                                <img src="" id="fotosimovel" alt="" class="fotos-admin">
-                                                            </div>
+                                                    <div class="container lista-fotos">
+                                                        <div class="lista-fotos" id="fotosimovel">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -169,7 +165,7 @@
                                             <%= formatter.format(imovel.price) %>
                                     </p>
                                     <a style="text-decoration: none;"
-                                        onclick="modalComplete(<%=imovel.idimovel%>, <%=imovel.price%>,`<%=imovel.title%>`,`<%=imovel.description%>`,`<%=imovel.district%>`,`<%=imovel.street%>`,`<%=imovel.city%>`,`<%=imovel.house_number%>`,<%=imovel.area%>,`<%=imovel.monthly_payment%>`,<%=imovel.bedrooms%>,<%=imovel.suites%>,<%=imovel.bathrooms%>,<%=imovel.garages%>,`<%=imovel.finality%>`,`<%=imovel.imovel_type%>`,<%imovel.photos.codepic%>)"
+                                        onclick="modalComplete(<%=imovel.idimovel%>, <%=imovel.price%>,`<%=imovel.title%>`,`<%=imovel.description%>`,`<%=imovel.district%>`,`<%=imovel.street%>`,`<%=imovel.city%>`,`<%=imovel.house_number%>`,<%=imovel.area%>,`<%=imovel.monthly_payment%>`,<%=imovel.bedrooms%>,<%=imovel.suites%>,<%=imovel.bathrooms%>,<%=imovel.garages%>,`<%=imovel.finality%>`,`<%=imovel.imovel_type%>`,<%=JSON.stringify(imovel.photos)%>)"
                                         data-toggle="modal" data-target="#exampleModalLong">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icone-svg" viewBox="0 0 512 512">
                                             <path
@@ -216,6 +212,7 @@
         }
 
         function modalComplete(idimovel, price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type, photos) {
+            console.log(photos)
             $("#id_imovel").val(idimovel)
             $("#txtTitulo").val(title)
             $("#txtDescricao").val(description)
@@ -230,7 +227,20 @@
             $("#txtVagas").val(garages)
             $("#txtTipo").val(imovel_type)
             $("#txtValor").val(price)
-            $("#fotosimovel").attr("src", photos.codepic)
+            $("#txtCondominio").val(monthly_payment)
+            // $("#fotosimovel").attr("src", photos.codepic)
+            for(photo of photos){
+                var img = document.createElement("img");
+
+                img.src = photo.codepic;
+
+                img.className = "fotos-admin";
+
+                var src = document.getElementById("fotosimovel");
+
+                src.appendChild(img);
+            }
+            document.getElementById("fotosimovel")
 
             if ($("#txtFinalidade").val() == "Vender") {
                 $("#finalityVender").attr("selected", "selected")
@@ -263,7 +273,7 @@
         formdata.append("city", $("#txtCidade").val()),               
         formdata.append("house_number", $("#txtNumero").val()),               
         formdata.append("area", parseFloat($("#txtArea").val())),               
-        formdata.append("monthly_payment", parseFloat($("#txtValor").val())),               
+        formdata.append("monthly_payment", parseFloat($("#txtCondominio").val())),               
         formdata.append("bedrooms", parseInt($("#txtQuarto").val())),               
         formdata.append("suites", parseInt($("#txtSuites").val())),               
         formdata.append("bathrooms", parseInt($("#txtBanheiros").val())),               

@@ -437,6 +437,17 @@ header, .navbar {
     align-items: flex-start;
   }
 
+  .lista-fotos {
+    max-width: 70rem;
+    padding: 0 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
   .icones-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
