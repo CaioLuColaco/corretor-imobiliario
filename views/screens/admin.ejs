@@ -209,6 +209,8 @@
             $("#txtVagas").val(0)
             $("#txtTipo").val("")
             $("#txtValor").val(0)
+
+            document.getElementById("fotosimovel").innerHTML = ""   
         }
 
         function modalComplete(idimovel, price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type, photos) {
@@ -229,6 +231,10 @@
             $("#txtValor").val(price)
             $("#txtCondominio").val(monthly_payment)
             // $("#fotosimovel").attr("src", photos.codepic)
+
+            var divImovel = document.getElementById("fotosimovel")  
+            divImovel.innerHTML = ""       
+
             for(photo of photos){
                 var img = document.createElement("img");
 
@@ -236,7 +242,7 @@
 
                 img.className = "fotos-admin";
 
-                var src = document.getElementById("fotosimovel");
+                var src = divImovel;
 
                 src.appendChild(img);
             }
@@ -293,6 +299,8 @@
                     data:formdata,
                     headers: { "Content-Type": "multipart/form-data"},
                 })
+                window.location.reload(true);
+                window.alert("O imóvel foi cadastrado com sucesso!")
             } else {
                 response = await axios({
                     method: "put",
@@ -300,9 +308,10 @@
                     data:formdata,
                     headers: { "Content-Type": "multipart/form-data"},
                 })
+                window.location.reload(true);
+                window.alert("As informações do imóvel foram atualizadas com sucesso!")
             }
             // console.log(response)
-            window.location.reload(true);
         }
 
         async function imovelDelete() {
@@ -310,6 +319,7 @@
             const response = await axios.delete(`/imov/${idImovel}`)
             console.log(response)
             window.location.reload(true);
+            window.alert("Este imóvel foi deletado com sucesso!")
         }
 
 
