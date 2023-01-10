@@ -2,15 +2,6 @@ const { PrismaClient } = require('@prisma/client')
 
 const prisma = new PrismaClient()
 
-const cloudinary = require('cloudinary').v2
-
-cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME ,
-    api_key: process.env.API_KEY ,
-    api_secret: process.env.API_SECRET ,
-    secure: true
-});
-
 module.exports = {
 
     async createAll(req, res) {
@@ -59,7 +50,7 @@ module.exports = {
             return photos
             
         } catch (error) {
-            return error
+            return res.status(400).json({status:400, message: error.message})
         }
     },
 
@@ -74,7 +65,7 @@ module.exports = {
             return photos
             
         } catch (error) {
-            return error
+            return res.status(400).json({status:400, message: error.message})
         }
     },
 
