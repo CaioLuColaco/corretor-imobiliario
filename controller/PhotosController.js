@@ -14,9 +14,9 @@ module.exports = {
                 skipDuplicates: true
             })
             
-            return res.status(200).json(photos)
+            return photos
         } catch (error) {
-            return res.status(400).json({status:400, message: error.message})
+            return error
         }
     },
 
@@ -47,7 +47,7 @@ module.exports = {
                 }
             })
 
-            return res.status(200).json(photos)
+            return photos
             
         } catch (error) {
             return res.status(400).json({status:400, message: error.message})
@@ -61,10 +61,12 @@ module.exports = {
 
             const photos = await prisma.photos.findMany({where: {idimovel: imovelId}})
 
-            return res.status(200).json(photos)
+            // return res.status(200).json(photos)
+            return photos
             
         } catch (error) {
             return res.status(400).json({status:400, message: error.message})
         }
     },
+
 }
