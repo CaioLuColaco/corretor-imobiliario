@@ -61,9 +61,15 @@ module.exports = {
 
     async ihone(req, res) {
         try {
+            const imoveis = await prisma.imoveis.findMany({
+                include: {
+                    photos: true,
+                },
+                orderBy: {
+                    price: "asc"
+                }
+            })
 
-            const imoveis = await prisma.imoveis.findMany()
-    
             return imoveis? res.render("./screens/admin", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
