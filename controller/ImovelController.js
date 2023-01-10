@@ -1,7 +1,6 @@
 const { PrismaClient } = require('@prisma/client')
 const multiparty = require('multiparty')
-const fs = require('fs')
-const {createAll, deleteAll, findALL} = require('./PhotosController')
+const {createAll, deleteAll} = require('./PhotosController')
 
 const prisma = new PrismaClient()
 
@@ -21,7 +20,6 @@ module.exports = {
                 try {
                     let listaDeImagens = [];
 
-                    // console.log(Object.values(files))
                     for(let file of Object.values(files)){
                         listaDeImagens.push(file[0].path)
                     }
@@ -78,14 +76,12 @@ module.exports = {
                     
                     let listaDeImagens = [];
 
-                    // console.log(Object.values(files))
                     for(let file of Object.values(files)){
                         listaDeImagens.push(file[0].path)
                     }
 
 
                     const {price, title, description, district, street, city, house_number, area, monthly_payment, bedrooms, suites, bathrooms, garages, finality, imovel_type} = fields
-                    console.log("teste")
                     const imovel = await prisma.imoveis.update({
                         data: {
                             price: Number(price[0]) || Number(currentImovel.price),

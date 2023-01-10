@@ -38,15 +38,15 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row py-1">
-                                            <div class="col-md-2">
-                                                <label for="id_imovel" style="font-size:medium; font-weight:600;">Id
-                                                    Imóvel</label>
-                                                <input id="id_imovel" class="form-control" type="text" placeholder=""
-                                                    readonly="true" disabled>
-                                            </div>
                                             <div class="col-md-10">
                                                 <label for="" style="font-size:medium; font-weight:600;">Título</label>
                                                 <input id="txtTitulo" class="form-control" type="text" placeholder="">
+                                            </div>
+                                            <div class="col-md-2">
+                                                <label for="id_imovel" class="invisible" style="font-size:medium; font-weight:600;">Id
+                                                    Imóvel</label>
+                                                <input id="id_imovel" class="form-control invisible" type="text" placeholder=""
+                                                    readonly="true" disabled>
                                             </div>
                                         </div>
                                         <div class="row py-1">
@@ -230,7 +230,6 @@
             $("#txtTipo").val(imovel_type)
             $("#txtValor").val(price)
             $("#txtCondominio").val(monthly_payment)
-            // $("#fotosimovel").attr("src", photos.codepic)
 
             var divImovel = document.getElementById("fotosimovel")  
             divImovel.innerHTML = ""       
