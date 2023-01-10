@@ -70,7 +70,6 @@ module.exports = {
                 }
             })
 
-            //console.log(imoveis);    
             return imoveis? res.render("./screens/admin", {imoveis: imoveis}) : res.render("./screens/pageNotFind")
             
         } catch (error) {
