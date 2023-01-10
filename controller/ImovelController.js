@@ -61,14 +61,13 @@ module.exports = {
                     return res.status(200).json(imovel)
         
                 } catch (error) {
-                    console.log(error.message)
                     return res.status(400).json({status:400, message: error.message})
                 }
             })
     },
 
     async update(req, res) {
-        const imovelId = parseInt(req.params.imovelId)
+            const imovelId = parseInt(req.params.imovelId)
             const form = new multiparty.Form();
             form.parse(req, async (err, fields, files) => {
                 try {
@@ -119,7 +118,6 @@ module.exports = {
                     return res.status(200).json(imovel)
         
                 } catch (error) {
-                    console.log(error.message)
                     return res.status(400).json({status:400, message: error.message})
                 }
             })
