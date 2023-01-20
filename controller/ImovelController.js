@@ -1,9 +1,11 @@
 const { PrismaClient } = require('@prisma/client')
+
+const prisma = new PrismaClient()
+
 const multiparty = require('multiparty')
 const fs = require('fs')
 const {createAll, deleteAll, findALL} = require('./PhotosController')
 
-const prisma = new PrismaClient()
 
 const cloudinary = require('cloudinary').v2
 
