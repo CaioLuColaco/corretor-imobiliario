@@ -1,6 +1,7 @@
 const { PrismaClient } = require('@prisma/client')
 
 const bcrypt = require("bcryptjs")
+const jwt = require('jsonwebtoken')
 
 const prisma = new PrismaClient()
 
@@ -88,7 +89,21 @@ module.exports = {
             }
             
             if(validation == true){
-                return res.status(200).json(user)
+                try {
+                    const token = jwt.sign({
+                        id: user.id,
+                        name: user.name
+                    },
+                    process.env.AUTH_SECRET_KEY
+                    )
+    
+                    return res.status(200).json({message: "Usuário autenticado com sucesso!", token})
+
+                } catch (error) {
+                    console.log(error)
+                }
+                
+
             }else{
                 return res.status(404).json({status: 404, message: "Email ou senha incorretos!"})
             }
