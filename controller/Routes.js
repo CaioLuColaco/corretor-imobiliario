@@ -4,6 +4,7 @@ const routes = express.Router()
 
 const ImovelController = require('./ImovelController')
 const PhotosController = require('./PhotosController')
+const UserControllers = require('./UserController')
 const Pages = require('./Pages')
 
 // Imoveis
@@ -29,6 +30,13 @@ routes.get('/financas',             Pages.financas)
 routes.get('/home',                 Pages.home)
 routes.get('/',                     Pages.home)
 
+// User
+routes.get('/userCreate',           UserControllers.create)
+routes.get('/userAuth',             UserControllers.authenticationUser)
+routes.get('/userUpdate/:userId',   UserControllers.update)
+routes.get('/userDelete/:userId',   UserControllers.delete)
+routes.get('/userFind/:userId',     UserControllers.find)
+routes.get('/userFindAll',          UserControllers.findAll)
 
 routes.use((req, res) => {
     res.status(404).get('/imovel',  Pages.pageNotFind)
