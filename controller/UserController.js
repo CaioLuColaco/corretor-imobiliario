@@ -1,5 +1,7 @@
 const { PrismaClient } = require('@prisma/client')
 
+const bcrypt = require("bcryptjs")
+
 const prisma = new PrismaClient()
 
 module.exports = {
@@ -7,7 +9,7 @@ module.exports = {
         try {
             const userId = parseInt(req.params.userId)
 
-            const user = await prisma.user.findUnique({
+            const user = await prisma.users.findUnique({
                 where: {
                     id: userId 
                 }
@@ -23,7 +25,7 @@ module.exports = {
     async findAll(req, res) {
         try {
 
-            const users = await prisma.user.findMany()
+            const users = await prisma.users.findMany()
 
             return res.status(200).json(users)
             
@@ -37,7 +39,7 @@ module.exports = {
 
             const {name, email, password, permission} = req.body
 
-            const findUser = await prisma.user.findUnique({
+            const findUser = await prisma.users.findUnique({
                 where: {
                     email: email
                 }
@@ -47,15 +49,49 @@ module.exports = {
                 return res.status(400).json({status: 400, message: "Email já cadastrado!"})
             }
 
-            const user = await prisma.user.create({
+            const salt = bcrypt.genSaltSync(10)
+            const passwordHash = bcrypt.hashSync(password, salt)
+
+            const user = await prisma.users.create({
                 data: {
                     name: name,
                     email: email,
-                    password: password
+                    password: passwordHash
+                }
+            })
+            console.log("fim")
+            return res.status(200).json(user)
+
+        } catch (error) {
+            return res.status(400).json({status:400, message: error.message})
+        }
+    },
+
+    async authenticationUser(req, res) {
+        try {
+
+            const {email, password} = req.body
+
+            const user = await prisma.users.findUnique({
+                where: {
+                    email: email
                 }
             })
 
-            return res.status(200).json(user)
+            if(!user){
+                return res.json(404).json({status: 404, message: "Email ou senha incorretos!"})
+            }
+
+            var validation = false
+            if(email == user.email){
+                bcrypt.compare(password, user.password, function(err, res) {
+                    validation = res
+                });
+            }
+            
+            if(validation == true){
+                return res.status(200).json(user)
+            }
 
         } catch (error) {
             return res.status(400).json({status:400, message: error.message})
@@ -67,7 +103,7 @@ module.exports = {
 
             const {userId} = parseInt(req.params.userId)
 
-            const currentUser = await prisma.user.findUnique({
+            const currentUser = await prisma.users.findUnique({
                 where: {
                     id: userId
                 }
@@ -79,7 +115,7 @@ module.exports = {
 
             const {name, email, password, permission} = req.body
 
-            const user = await prisma.user.update({
+            const user = await prisma.users.update({
                 where: {
                     id: userId
                 },
@@ -103,7 +139,7 @@ module.exports = {
             
             const {userId} = parseInt(req.params.userId)
 
-            const findUser = await prisma.user.findUnique({
+            const findUser = await prisma.users.findUnique({
                 where: {
                     id: userId
                 }
@@ -113,14 +149,14 @@ module.exports = {
                 return res.status(400).json({status: 200, message: "Usuário não encontrado!"})
             }
 
-            const user = await prisma.user.delete({
+            const user = await prisma.users.delete({
                 where: {
                     id: userId
                 }
             })
 
             return res.status(200).json(user)
-            
+
         } catch (error) {
             return res.status(400).json({status:400, message: error.message})
         }
