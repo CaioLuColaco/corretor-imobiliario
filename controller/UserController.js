@@ -79,18 +79,18 @@ module.exports = {
             })
 
             if(!user){
-                return res.json(404).json({status: 404, message: "Email ou senha incorretos!"})
+                return res.status(404).json({status: 404, message: "Email ou senha incorretos!"})
             }
 
             var validation = false
             if(email == user.email){
-                bcrypt.compare(password, user.password, function(err, res) {
-                    validation = res
-                });
+                validation = bcrypt.compareSync(password, user.password)
             }
             
             if(validation == true){
                 return res.status(200).json(user)
+            }else{
+                return res.status(404).json({status: 404, message: "Email ou senha incorretos!"})
             }
 
         } catch (error) {
