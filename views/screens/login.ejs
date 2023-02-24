@@ -1,8 +1,10 @@
 <%- include ('./../elements/header.ejs') %>
 
 <link rel="stylesheet" href="/style/login.css">
+<link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet"></link>
 
-<body class="text-center">
+<body class="text-center" style="height: 100vh !important;">
+    <div class="box-container">
         <div class="container" id="container">
             <div class="form-container sign-up-container">
                 <form action="#">
@@ -10,16 +12,16 @@
                     <input type="text" placeholder="Name" />
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
-                    <button>Cadastrar</button>
+                    <button id="register">Cadastrar</button>
                 </form>
             </div>
 
             <div class="form-container sign-in-container">
                 <form action="#">
                     <h1>Login</h1>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button>Entrar</button>
+                    <input type="email" placeholder="Email" id="emailLogin"/>
+                    <input type="password" placeholder="Password" id="passwordLogin"/>
+                    <button id="login">Entrar</button>
                 </form>
             </div>
             <div class="overlay-container">
@@ -37,6 +39,9 @@
                 </div>
             </div>
         </div>
+    </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
 
 <script src="/script/login.js"></script>

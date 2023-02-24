@@ -60,7 +60,7 @@ module.exports = {
                     password: passwordHash
                 }
             })
-            console.log("fim")
+
             return res.status(200).json(user)
 
         } catch (error) {
@@ -92,7 +92,8 @@ module.exports = {
                 try {
                     const token = jwt.sign({
                         id: user.id,
-                        name: user.name
+                        name: user.name,
+                        permission: user.permission
                     },
                     process.env.AUTH_SECRET_KEY
                     )
